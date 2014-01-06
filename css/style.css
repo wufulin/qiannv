@@ -1,0 +1,15 @@
+div#header {
+    margin:auto;
+    width: 800px;
+    background-color: #ff8800;
+}
+
+div#content {
+    margin-left: auto;
+    margin-right: auto;
+    width: 800px;
+}
+
+.ImgList {
+    float: left;
+}
