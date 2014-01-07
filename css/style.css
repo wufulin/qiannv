@@ -1,10 +1,51 @@
-div#header {
-    margin:auto;
-    width: 800px;
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    text-align: center;
+}
+
+.wrapper {
+    width: 65%;
+    margin: 5% auto;
+    text-align: left;
+}
+
+.header {
+    height: 60px;
+    background-color: #eecc00;
+}
+
+.nav {
+    overflow: hidden;
     background-color: #ff8800;
 }
 
-div#content {
+.nav div#select {
+    overflow: hidden;
+}
+
+.nav div#select * {
+    float: left;
+}
+
+div#search {
+    overflow: hidden;
+}
+
+input#input {
+    display: inline;
+    float: left;
+}
+
+div#search span {
+    display: inline;
+    float: right;
+}
+
+.content {
     margin-left: auto;
     margin-right: auto;
     width: 800px;
