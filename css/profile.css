@@ -28,11 +28,22 @@ div.header {
 
 /* content */
 div.content {
-    padding: 10px 20px;
+    padding: 5px 20px;
 }
 div.content > a {
     text-decoration: underline;
     display: block;
     padding:5px;
     font-size: 13px;
+}
+
+/* main */
+div.main {
+    background-color: #18275e;
+    width: 576px;
+    height: 360px;
+    overflow: hidden;
+}
+div.left {
+
 }

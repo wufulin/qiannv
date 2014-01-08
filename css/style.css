@@ -63,6 +63,7 @@ div.left a {
 div.left li {
     padding: 6px 10px 6px 10px;
     background-color: #24367b;
+    height: 22px;
 }
 
 div.left li img {
@@ -215,6 +216,7 @@ div.footer > input {
   *display: inline;
   *zoom: 1;
   margin: 0 10px 5px 0;
+  vertical-align: top;
 }
 .ddContainer .ddToggle {
   border-color: #122051!important;
