@@ -201,16 +201,6 @@ ol.pagination a[rel="next"] {
     border: none;
 }
 
-ol.pagination a[rel="prev"]:before {
-    content: "\00AB";
-    padding-right: 0.5em;
-}
-
-ol.pagination a[rel="next"]:after {
-    content: "\00BB";
-    padding-left: 0.5em;
-}
-
 div.footer > span {
     margin-left: 10px;
 }
