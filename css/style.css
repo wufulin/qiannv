@@ -14,7 +14,7 @@ body {
 .wrapper {
     width: 620px;
     height: 440px;
-    margin: 5% auto;
+    margin: 0% auto;
     background-image: url(../image/bg.png);
     text-align: left;
 }
@@ -78,7 +78,7 @@ div.main div.right {
     float: right;
     width: 380px;
     height: 410px;
-    padding-left: 20px;
+    padding-left: 15px;
     display: inline;
 }
 
@@ -91,8 +91,8 @@ div.query {
   width: 50px;
 }
 
-div.query select {
-    width: 115px;
+input#search-input {
+    width: 156px;
 }
 
 div.right > .nano {
@@ -231,12 +231,12 @@ div.footer > input {
   font-size:12px;
   height: 16px;
   line-height: 16px;
-  width: 90px!important;
+  width: 80px!important;
 }
 .ddContainer .ddToggle span {
   border-color: #288bdc transparent transparent;
 }
 .ddOptionList {
-  min-width: 114px;
-  _width: 114px;
+  min-width: 104px;
+  _width: 104px;
 }
