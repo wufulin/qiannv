@@ -227,6 +227,7 @@ div.footer > input {
   *zoom: 1;
   margin: 0 10px 5px 0;
   vertical-align: top;
+  z-index: 10000;
 }
 .ddContainer .ddToggle {
   border-color: #122051!important;
