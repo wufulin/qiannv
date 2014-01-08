@@ -41,9 +41,80 @@ div.content > a {
 div.main {
     background-color: #18275e;
     width: 576px;
-    height: 360px;
+    height: 350px;
     overflow: hidden;
 }
 div.left {
-
+    float: left;
+    width: 365px;
+    height: 100%;
+}
+a.user-link {
+    display: block;
+    text-align: center;
+    line-height: 20px;
+    margin-left: 35px;
+    margin-top: 8px;
+}
+a.user-link:hover {
+    color: #6bbeff;
+}
+div.avatar {
+    width: 330px;
+    height: 250px;
+    margin-left: 35px;
+    margin-top: 35px;
+    background: #fff url(../image/avatar.png) no-repeat center;
+    border-radius: 0.2em;
+}
+div.right {
+    float: right;
+    width: 210px;
+    height: 100%;
+}
+div.right ul {
+    margin-left: 15px;
+    margin-top: 35px;
+    height: 290px;
+    width: 160px;
+}
+div.right ul li {
+    line-height: 20px;
+}
+img.small_avatar {
+    height: 50px;
+    display: block;
+}
+li.username {
+    color: #6bbeff;
+    font-size: 16px;
+    text-align: left;
+    line-height: 24px;
+    margin: 3px 0;
+}
+li.number {
+    color: #6bbeff;
+    text-align: left;
+    font-size: 12px;
+}
+div.right ul li.count {
+    line-height: 30px;
+    padding-top: 5px;
+    padding-bottom: 6px;
+    margin-left: -20px;
+    text-align: center;
+}
+li.count > strong {
+    font-size: 20px;
+    color: #ffffff;
+}
+a.vote-button {
+    text-decoration: none;
+    text-align: center;
+    line-height: 33px;
+    display: block;
+    color: #ffffff;
+    background:url(../image/sprite.png) -1px -33px no-repeat;
+    width: 130px;
+    height: 33px;
 }

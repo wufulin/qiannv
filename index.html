@@ -12,9 +12,17 @@
     <script language="javascript" type="text/javascript">
       (function() {
         $(function() {
-          $('.area-select, #group-select, #server-select').jqDropDown({
+          $('.area-select').jqDropDown({
             afterToggle: function() {
-              $(this).next().width('auto')
+                var _this = $(this);
+                _this.parents('.ddContainer').css('zIndex', '100000000');
+                _this.next().width('auto')
+            }
+          });
+          $('#group-select, #server-select').jqDropDown({
+            afterToggle: function() {
+                var _this = $(this);
+              _this.next().width('auto')
             }
           });
            $(".nano").nanoScroller({alwaysVisible: true});
@@ -116,10 +124,10 @@
                         <div class="detail">
                             <span class="name">寒烟思</span>
 
-                            <div class="figure">
+                            <a class="figure" href="profile.html">
                                 <img src="image/avatar.png" alt="">
                                 <div class="index">#2311</div>
-                            </div>
+                            </a>
 
                             <div class="count-div">
                                 <span class="count"><i class="num">9999</i> 票</span>
@@ -132,10 +140,10 @@
                         <div class="detail">
                             <span class="name">寒烟思</span>
 
-                            <div class="figure">
+                            <a class="figure" href="profile.html">
                                 <img src="image/avatar.png" alt="">
                                 <div class="index">#2311</div>
-                            </div>
+                            </a>
 
                             <div class="count-div">
                                 <span class="count"><i class="num">9999</i> 票</span>
@@ -148,10 +156,10 @@
                         <div class="detail">
                             <span class="name">寒烟思</span>
 
-                            <div class="figure">
+                            <a class="figure" href="profile.html">
                                 <img src="image/avatar.png" alt="">
                                 <div class="index">#2311</div>
-                            </div>
+                            </a>
 
                             <div class="count-div">
                                 <span class="count"><i class="num">9999</i> 票</span>
@@ -164,10 +172,10 @@
                         <div class="detail">
                             <span class="name">寒烟思</span>
 
-                            <div class="figure">
+                            <a class="figure" href="profile.html">
                                 <img src="image/avatar.png" alt="">
                                 <div class="index">#2311</div>
-                            </div>
+                            </a>
 
                             <div class="count-div">
                                 <span class="count"><i class="num">9999</i> 票</span>
@@ -180,10 +188,10 @@
                         <div class="detail">
                             <span class="name">寒烟思</span>
 
-                            <div class="figure">
+                            <a class="figure" href="profile.html">
                                 <img src="image/avatar.png" alt="">
                                 <div class="index">#2311</div>
-                            </div>
+                            </a>
 
                             <div class="count-div">
                                 <span class="count"><i class="num">9999</i> 票</span>
@@ -196,10 +204,10 @@
                         <div class="detail">
                             <span class="name">寒烟思</span>
 
-                            <div class="figure">
+                            <a class="figure" href="profile.html">
                                 <img src="image/avatar.png" alt="">
                                 <div class="index">#2311</div>
-                            </div>
+                            </a>
 
                             <div class="count-div">
                                 <span class="count"><i class="num">9999</i> 票</span>
@@ -212,10 +220,10 @@
                         <div class="detail">
                             <span class="name">寒烟思</span>
 
-                            <div class="figure">
+                            <a class="figure" href="profile.html">
                                 <img src="image/avatar.png" alt="">
                                 <div class="index">#2311</div>
-                            </div>
+                            </a>
 
                             <div class="count-div">
                                 <span class="count"><i class="num">9999</i> 票</span>
