@@ -26,13 +26,13 @@ div.header {
 }
 
 /* content */
-div.content {
+div.main {
     overflow: hidden;
     height: 414px;
 }
 
 /* left */
-div.content div.left {
+div.main div.left {
     float: left;
     width: 220px;
     height: 410px;
@@ -49,23 +49,32 @@ div#rank {
 div.left ul {
     width: 210px;
     margin-left: 2px;
+    margin-top: -5px;
 }
 
 div.left a {
     text-decoration: none;
+    position: relative;
+    left: 5px;
+    top: -5px;
+    font-size: 13px;
 }
 
 div.left li {
-    padding: 10px 10px 10px 30px;
+    padding: 6px 10px 6px 10px;
     background-color: #24367b;
 }
 
+div.left li img {
+    position: relative;
+    left: 5px;
+}
 div.left li.odd {
     background-color: #1e2e6c;
 }
 
 /* right */
-div.content div.right {
+div.main div.right {
     float: right;
     width: 380px;
     height: 410px;
@@ -82,43 +91,85 @@ div.query select {
     width: 115px;
 }
 
-div.list {
+div.right > .nano {
+    width: 375px;
     height: 305px;
-    overflow: hidden;
 }
 
-div.list li {
+div.right > .nano .content {
+    height: 305px;
+}
+
+div.right > .nano .pane {
+    background: #24367b;
+}
+
+div.right > .nano .slider {
+    background: #487bbc;
+}
+
+div.right > .nano .content li {
     float: left;
     width: 105px;
     height: 145px;
     padding-right: 15px;
+    padding-bottom: 10px;
+}
+
+div.detail {
+    background-color: #18275e;
+    padding: 3px 2px;
+}
+
+div.count-div {
+    text-align: center;
+    padding: 3px 0px;
+}
+
+span.count ,
+span.count i {
+    color: #6bbeff;
+}
+
+div.detail > span.name {
+    color: #fff;
+    margin-top: 3px;
+    margin-left: 2px;
+    line-height: 18px;
+}
+
+div.figure {
+    position: relative;
+}
+
+div.figure > div.index {
+    position: absolute;
+    left: 59px;
+    top: 62px;
+    color: #ffffff;
 }
 
 a.vote-btn {
     text-decoration: none;
     text-align: center;
-    line-height: 1.4;
+    line-height: 23px;
     display: block;
     color: white;
     background: url(../image/sprite.png) -1px -112px no-repeat;
     width: 100px;
     height: 23px;
+    margin-left: 1px;
 }
 
-/*div.content li a {*/
-    /*display: block;*/
-    /*width:6.6em;*/
-    /*line-height: 1.4;*/
-    /*text-align: center;*/
-    /*text-decoration: none;*/
-    /*border: 1px solid blueviolet;*/
-    /*background-color: blueviolet;*/
-    /*color: white;*/
-/*}*/
-
 /* pagination */
-div.footer ol.pagination {
+div.footer {
     overflow: hidden;
+    padding: 5px 0px;
+}
+
+div.footer ol.pagination {
+    float: left;
+    padding-top: 2px;
 }
 
 ol.pagination li {
@@ -154,4 +205,13 @@ ol.pagination a[rel="prev"]:before {
 ol.pagination a[rel="next"]:after {
     content: "\00BB";
     padding-left: 0.5em;
+}
+
+div.footer > span {
+    margin-left: 10px;
+}
+
+div.footer > input {
+    width: 80px;
+    height: 14px;
 }

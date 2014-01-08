@@ -1,0 +1,19 @@
+/* reset */
+* {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    color: #288bdc;
+}
+
+body {
+    text-align: center;
+}
+
+.wrapper {
+    width: 620px;
+    height: 440px;
+    margin: 5% auto;
+    background-image: url(../image/bg.png);
+    text-align: left;
+}

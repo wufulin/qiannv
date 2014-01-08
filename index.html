@@ -4,12 +4,16 @@
     <title>倩女其姝幽梦天使竞选（初赛）</title>
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
     <link rel="stylesheet" type="text/css" href="css/style.css"/>
+    <link rel="stylesheet" type="text/css" href="css/nanoscroller.css"/>
     <link rel="stylesheet" type="text/css" href="js/chosen.min.css"/>
     <script language="javascript" type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
+    <script language="javascript" type="text/javascript" src="js/jquery.nanoscroller.min.js"></script>
     <script language="javascript" type="text/javascript" src="js/chosen.jquery.min.js"></script>
     <script language="javascript" type="text/javascript">
-
-        $('area-select').chosen();
+        $(function(){
+		    $(".nano").nanoScroller({alwaysVisible: true});
+            $('area-select').chosen();
+	    });
 
         var cc = window.external;
         function setPullNum(number) {
@@ -17,7 +21,6 @@
         }
 
         window.onload = function () {
-//            if(cc)
         }
     </script>
 </head>
@@ -26,49 +29,49 @@
     <div class="header">
         <span>可投票数：</span><strong>5</strong>
     </div>
-    <div class="content">
+    <div class="main">
         <!-- content goes here -->
         <div class="left">
             <div id="rank"></div>
             <ul>
                 <li class="odd">
-                    <img src="">
+                    <img src="image/small.png">
                     <a href="#">骑士游戏名称八字 1234票</a>
                 </li>
                 <li>
-                    <img src="">
+                    <img src="image/small.png">
                     <a href="#">骑士游戏名称八字 1234票</a>
                 </li>
                 <li class="odd">
-                    <img src="">
+                    <img src="image/small.png">
                     <a href="#">骑士游戏名称八字 1234票</a>
                 </li>
                 <li>
-                    <img src="">
+                    <img src="image/small.png">
                     <a href="#">骑士游戏名称八字 1234票</a>
                 </li>
                 <li class="odd">
-                    <img src="">
+                    <img src="image/small.png">
                     <a href="#">骑士游戏名称八字 1234票</a>
                 </li>
                 <li>
-                    <img src="">
+                    <img src="image/small.png">
                     <a href="#">骑士游戏名称八字 1234票</a>
                 </li>
                 <li class="odd">
-                    <img src="">
+                    <img src="image/small.png">
                     <a href="#">骑士游戏名称八字 1234票</a>
                 </li>
                 <li>
-                    <img src="">
+                    <img src="image/small.png">
                     <a href="#">骑士游戏名称八字 1234票</a>
                 </li>
                 <li class="odd">
-                    <img src="">
+                    <img src="image/small.png">
                     <a href="#">骑士游戏名称八字 1234票</a>
                 </li>
                 <li>
-                    <img src="">
+                    <img src="image/small.png">
                     <a href="#">骑士游戏名称八字 1234票</a>
                 </li>
             </ul>
@@ -109,107 +112,134 @@
 
                 <input id="search-input" type="search"/>
             </div>
-            <div class="list">
-                <li>
-                    <div class="detail">
-                        <span class="name">寒烟思</span>
+            <div class="nano">
+                <div class="content">
+                    <li>
+                        <div class="detail">
+                            <span class="name">寒烟思</span>
 
-                        <div class="figure"><img src="image/avatar.png" alt=""></div>
-                        <div>
-                            <span class="index">#2311</span>
-                        </div>
-                        <div>
-                            <span class="count"><i class="num">9999</i>票</span>
-                        </div>
-                    </div>
-                    <a href="javascript:void(0)" class="vote-btn">投她一票</a>
-                </li>
+                            <div class="figure">
+                                <img src="image/avatar.png" alt="">
+                                <div class="index">#2311</div>
+                            </div>
 
-                <li>
-                    <div class="detail">
-                        <span class="name">寒烟思</span>
+                            <div class="count-div">
+                                <span class="count"><i class="num">9999</i> 票</span>
+                            </div>
+                            <a href="javascript:void(0)" class="vote-btn">投她一票</a>
+                        </div>
+                    </li>
 
-                        <div class="figure"><img src="image/avatar.png" alt=""></div>
-                        <div>
-                            <span class="index">#2311</span>
-                        </div>
-                        <div>
-                            <span class="count"><i class="num">9999</i>票</span>
-                        </div>
-                    </div>
-                    <a href="javascript:void(0)" class="vote-btn">投她一票</a>
-                </li>
+                    <li>
+                        <div class="detail">
+                            <span class="name">寒烟思</span>
 
-                <li>
-                    <div class="detail">
-                        <span class="name">寒烟思</span>
+                            <div class="figure">
+                                <img src="image/avatar.png" alt="">
+                                <div class="index">#2311</div>
+                            </div>
 
-                        <div class="figure"><img src="image/avatar.png" alt=""></div>
-                        <div>
-                            <span class="index">#2311</span>
+                            <div class="count-div">
+                                <span class="count"><i class="num">9999</i> 票</span>
+                            </div>
+                            <a href="javascript:void(0)" class="vote-btn">投她一票</a>
                         </div>
-                        <div>
-                            <span class="count"><i class="num">9999</i>票</span>
-                        </div>
-                    </div>
-                    <a href="javascript:void(0)" class="vote-btn">投她一票</a>
-                </li>
+                    </li>
 
-                <li>
-                    <div class="detail">
-                        <span class="name">寒烟思</span>
+                    <li>
+                        <div class="detail">
+                            <span class="name">寒烟思</span>
 
-                        <div class="figure"><img src="image/avatar.png" alt=""></div>
-                        <div>
-                            <span class="index">#2311</span>
-                        </div>
-                        <div>
-                            <span class="count"><i class="num">9999</i>票</span>
-                        </div>
-                    </div>
-                    <a href="javascript:void(0)" class="vote-btn">投她一票</a>
-                </li>
+                            <div class="figure">
+                                <img src="image/avatar.png" alt="">
+                                <div class="index">#2311</div>
+                            </div>
 
-                <li>
-                    <div class="detail">
-                        <span class="name">寒烟思</span>
+                            <div class="count-div">
+                                <span class="count"><i class="num">9999</i> 票</span>
+                            </div>
+                            <a href="javascript:void(0)" class="vote-btn">投她一票</a>
+                        </div>
+                    </li>
 
-                        <div class="figure"><img src="image/avatar.png" alt=""></div>
-                        <div>
-                            <span class="index">#2311</span>
-                        </div>
-                        <div>
-                            <span class="count"><i class="num">9999</i>票</span>
-                        </div>
-                    </div>
-                    <a href="javascript:void(0)" class="vote-btn">投她一票</a>
-                </li>
+                    <li>
+                        <div class="detail">
+                            <span class="name">寒烟思</span>
 
-                <li>
-                    <div class="detail">
-                        <span class="name">寒烟思</span>
+                            <div class="figure">
+                                <img src="image/avatar.png" alt="">
+                                <div class="index">#2311</div>
+                            </div>
 
-                        <div class="figure"><img src="image/avatar.png" alt=""></div>
-                        <div>
-                            <span class="index">#2311</span>
+                            <div class="count-div">
+                                <span class="count"><i class="num">9999</i> 票</span>
+                            </div>
+                            <a href="javascript:void(0)" class="vote-btn">投她一票</a>
                         </div>
-                        <div>
-                            <span class="count"><i class="num">9999</i>票</span>
+                    </li>
+
+                    <li>
+                        <div class="detail">
+                            <span class="name">寒烟思</span>
+
+                            <div class="figure">
+                                <img src="image/avatar.png" alt="">
+                                <div class="index">#2311</div>
+                            </div>
+
+                            <div class="count-div">
+                                <span class="count"><i class="num">9999</i> 票</span>
+                            </div>
+                            <a href="javascript:void(0)" class="vote-btn">投她一票</a>
                         </div>
-                    </div>
-                    <a href="javascript:void(0)" class="vote-btn">投她一票</a>
-                </li>
+                    </li>
+
+                    <li>
+                        <div class="detail">
+                            <span class="name">寒烟思</span>
+
+                            <div class="figure">
+                                <img src="image/avatar.png" alt="">
+                                <div class="index">#2311</div>
+                            </div>
+
+                            <div class="count-div">
+                                <span class="count"><i class="num">9999</i> 票</span>
+                            </div>
+                            <a href="javascript:void(0)" class="vote-btn">投她一票</a>
+                        </div>
+                    </li>
+
+                    <li>
+                        <div class="detail">
+                            <span class="name">寒烟思</span>
+
+                            <div class="figure">
+                                <img src="image/avatar.png" alt="">
+                                <div class="index">#2311</div>
+                            </div>
+
+                            <div class="count-div">
+                                <span class="count"><i class="num">9999</i> 票</span>
+                            </div>
+                            <a href="javascript:void(0)" class="vote-btn">投她一票</a>
+                        </div>
+                    </li>
+                </div>
             </div>
-            <ol class="pagination">
-                <li><a href="" rel="prev">Prev</a></li>
-                <li><a href="">1</a></li>
-                <li class="selected">2</li>
-                <li><a href="">3</a></li>
-                <li><a href="">4</a></li>
-                <li><a href="">5</a></li>
-                <li><a href="" rel="next">Next</a></li>
-            </ol>
-            <span>跳转到：</span><input type="text" width="60px">
+            <div class="footer">
+                <ol class="pagination">
+                    <li><a href="" rel="prev">Prev</a></li>
+                    <li><a href="">1</a></li>
+                    <li class="selected">2</li>
+                    <li><a href="">3</a></li>
+                    <li><a href="">4</a></li>
+                    <li><a href="">5</a></li>
+                    <li><a href="" rel="next">Next</a></li>
+                </ol>
+            <span>跳转到：</span>
+            <input type="text" />
+            </div>
         </div>
     </div>
 </div>
