@@ -74,8 +74,12 @@ div.content div.right {
 }
 
 div.query {
-    overflow: hidden;
     padding: 15px 0px;
+}
+
+.query .field {
+  display: inline-block;
+  width: 50px;
 }
 
 div.query select {
@@ -154,4 +158,25 @@ ol.pagination a[rel="prev"]:before {
 ol.pagination a[rel="next"]:after {
     content: "\00BB";
     padding-left: 0.5em;
+}
+
+.ddContainer {
+  display: inline-block;
+  margin: 0 10px 5px 0;
+}
+.ddContainer .ddToggle {
+  border-color: #122051!important;
+  background: #18275E;
+  color: white;
+  font-size:12px;
+  height: 16px;
+  line-height: 16px;
+  width: 90px!important;
+}
+.ddContainer .ddToggle span {
+  border-color: #288bdc transparent transparent;
+}
+.ddOptionList {
+  min-width: 114px;
+  _width: 114px;
 }

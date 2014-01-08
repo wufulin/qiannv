@@ -3,22 +3,25 @@
 <head>
     <title>倩女其姝幽梦天使竞选（初赛）</title>
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+    <link rel="stylesheet" type="text/css" href="js/jqDropDown.css"/>
     <link rel="stylesheet" type="text/css" href="css/style.css"/>
-    <link rel="stylesheet" type="text/css" href="js/chosen.min.css"/>
     <script language="javascript" type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
-    <script language="javascript" type="text/javascript" src="js/chosen.jquery.min.js"></script>
+    <script language="javascript" type="text/javascript" src="js/jqDropDown.jquery.min.js"></script>
     <script language="javascript" type="text/javascript">
-
-        $('area-select').chosen();
+      (function() {
+        $(function() {
+          $('.area-select, #group-select, #server-select').jqDropDown({
+            afterToggle: function() {
+              $(this).next().width('auto')
+            }
+          });
+        })
 
         var cc = window.external;
         function setPullNum(number) {
             alert(number)
         }
-
-        window.onload = function () {
-//            if(cc)
-        }
+      })();
     </script>
 </head>
 <body>
@@ -76,7 +79,7 @@
         <div class="right">
             <div class="query">
                 <!-- query content goes here -->
-                <span>大&nbsp;&nbsp;&nbsp;区:</span>
+                <span class="field">大&nbsp;&nbsp;&nbsp;区:</span>
 
                 <select class="area-select" name="area">
                     <option value="all">全部</option>
@@ -86,7 +89,7 @@
                     <option value="all">全部</option>
                 </select>
 
-                <span>帮&nbsp;&nbsp;&nbsp;会:</span>
+                <span class="field">帮&nbsp;&nbsp;&nbsp;会:</span>
 
                 <select id="group-select" name="group">
                     <option value="all">全部</option>
@@ -97,7 +100,7 @@
                 </select>
 
                 <br>
-                <span>服务器:</span>
+                <span class="field">服务器:</span>
 
                 <select id="server-select" name="server">
                     <option value="all">全部</option>
