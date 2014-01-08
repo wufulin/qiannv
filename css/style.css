@@ -12,24 +12,30 @@ body {
 }
 
 .wrapper {
-    width: 625px;
-    height: 430px;
+    width: 620px;
+    height: 440px;
     margin: 5% auto;
     background-image: url(../image/bg.png);
     text-align: left;
 }
 
+/* header */
+div.header {
+    height: 25px;
+    text-align: center;
+}
+
 /* content */
 div.content {
     overflow: hidden;
-    height: 430px;
+    height: 414px;
 }
 
 /* left */
 div.content div.left {
     float: left;
     width: 220px;
-    height: 425px;
+    height: 410px;
     display: inline;
 }
 
@@ -57,13 +63,46 @@ div.left li {
 div.left li.odd {
     background-color: #1e2e6c;
 }
+
 /* right */
 div.content div.right {
     float: right;
     width: 380px;
-    height: 425px;
-    padding-left: 25px;
+    height: 410px;
+    padding-left: 20px;
     display: inline;
+}
+
+div.query {
+    overflow: hidden;
+    padding: 15px 0px;
+}
+
+div.query select {
+    width: 115px;
+}
+
+div.list {
+    height: 305px;
+    overflow: hidden;
+}
+
+div.list li {
+    float: left;
+    width: 105px;
+    height: 145px;
+    padding-right: 15px;
+}
+
+a.vote-btn {
+    text-decoration: none;
+    text-align: center;
+    line-height: 1.4;
+    display: block;
+    color: white;
+    background: url(../image/sprite.png) -1px -112px no-repeat;
+    width: 100px;
+    height: 23px;
 }
 
 /*div.content li a {*/
@@ -84,14 +123,14 @@ div.footer ol.pagination {
 
 ol.pagination li {
     float: left;
-    margin-right: 0.6em;
+    margin-right: 0.2em;
 }
 
 ol.pagination a,
 ol.pagination li.selected {
     display: block;
-    padding: 0.2em 0.5em;
-    border: 1px solid #ccc;
+    padding: 0.1em 0.2em;
+    border: 1px solid #122051;
     text-decoration: none;
 }
 

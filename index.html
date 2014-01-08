@@ -2,10 +2,30 @@
 <html>
 <head>
     <title>倩女其姝幽梦天使竞选（初赛）</title>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
     <link rel="stylesheet" type="text/css" href="css/style.css"/>
+    <link rel="stylesheet" type="text/css" href="js/chosen.min.css"/>
+    <script language="javascript" type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
+    <script language="javascript" type="text/javascript" src="js/chosen.jquery.min.js"></script>
+    <script language="javascript" type="text/javascript">
+
+        $('area-select').chosen();
+
+        var cc = window.external;
+        function setPullNum(number) {
+            alert(number)
+        }
+
+        window.onload = function () {
+//            if(cc)
+        }
+    </script>
 </head>
 <body>
 <div class="wrapper">
+    <div class="header">
+        <span>可投票数：</span><strong>5</strong>
+    </div>
     <div class="content">
         <!-- content goes here -->
         <div class="left">
@@ -58,41 +78,36 @@
                 <!-- query content goes here -->
                 <span>大&nbsp;&nbsp;&nbsp;区:</span>
 
-                <form>
-                    <select name="area">
-                        <option value="all">全部</option>
-                        <option value="all">全部</option>
-                        <option value="all">全部</option>
-                        <option value="all">全部</option>
-                        <option value="all">全部</option>
-                    </select>
-                </form>
+                <select class="area-select" name="area">
+                    <option value="all">全部</option>
+                    <option value="all">全部</option>
+                    <option value="all">全部</option>
+                    <option value="all">全部</option>
+                    <option value="all">全部</option>
+                </select>
 
                 <span>帮&nbsp;&nbsp;&nbsp;会:</span>
 
-                <form>
-                    <select name="group">
-                        <option value="all">全部</option>
-                        <option value="all">全部</option>
-                        <option value="all">全部</option>
-                        <option value="all">全部</option>
-                        <option value="all">全部</option>
-                    </select>
-                </form>
+                <select id="group-select" name="group">
+                    <option value="all">全部</option>
+                    <option value="all">全部</option>
+                    <option value="all">全部</option>
+                    <option value="all">全部</option>
+                    <option value="all">全部</option>
+                </select>
 
+                <br>
                 <span>服务器:</span>
 
-                <form>
-                    <select name="server">
-                        <option value="all">全部</option>
-                        <option value="all">全部</option>
-                        <option value="all">全部</option>
-                        <option value="all">全部</option>
-                        <option value="all">全部</option>
-                    </select>
-                </form>
+                <select id="server-select" name="server">
+                    <option value="all">全部</option>
+                    <option value="all">全部</option>
+                    <option value="all">全部</option>
+                    <option value="all">全部</option>
+                    <option value="all">全部</option>
+                </select>
 
-                <input id="input" type="search"/>
+                <input id="search-input" type="search"/>
             </div>
             <div class="list">
                 <li>
@@ -102,6 +117,8 @@
                         <div class="figure"><img src="image/avatar.png" alt=""></div>
                         <div>
                             <span class="index">#2311</span>
+                        </div>
+                        <div>
                             <span class="count"><i class="num">9999</i>票</span>
                         </div>
                     </div>
@@ -112,9 +129,11 @@
                     <div class="detail">
                         <span class="name">寒烟思</span>
 
-                        <div class="figure"><img src="" alt=""></div>
+                        <div class="figure"><img src="image/avatar.png" alt=""></div>
                         <div>
                             <span class="index">#2311</span>
+                        </div>
+                        <div>
                             <span class="count"><i class="num">9999</i>票</span>
                         </div>
                     </div>
@@ -125,9 +144,56 @@
                     <div class="detail">
                         <span class="name">寒烟思</span>
 
-                        <div class="figure"><img src="" alt=""></div>
+                        <div class="figure"><img src="image/avatar.png" alt=""></div>
                         <div>
                             <span class="index">#2311</span>
+                        </div>
+                        <div>
+                            <span class="count"><i class="num">9999</i>票</span>
+                        </div>
+                    </div>
+                    <a href="javascript:void(0)" class="vote-btn">投她一票</a>
+                </li>
+
+                <li>
+                    <div class="detail">
+                        <span class="name">寒烟思</span>
+
+                        <div class="figure"><img src="image/avatar.png" alt=""></div>
+                        <div>
+                            <span class="index">#2311</span>
+                        </div>
+                        <div>
+                            <span class="count"><i class="num">9999</i>票</span>
+                        </div>
+                    </div>
+                    <a href="javascript:void(0)" class="vote-btn">投她一票</a>
+                </li>
+
+                <li>
+                    <div class="detail">
+                        <span class="name">寒烟思</span>
+
+                        <div class="figure"><img src="image/avatar.png" alt=""></div>
+                        <div>
+                            <span class="index">#2311</span>
+                        </div>
+                        <div>
+                            <span class="count"><i class="num">9999</i>票</span>
+                        </div>
+                    </div>
+                    <a href="javascript:void(0)" class="vote-btn">投她一票</a>
+                </li>
+
+                <li>
+                    <div class="detail">
+                        <span class="name">寒烟思</span>
+
+                        <div class="figure"><img src="image/avatar.png" alt=""></div>
+                        <div>
+                            <span class="index">#2311</span>
+                        </div>
+                        <div>
                             <span class="count"><i class="num">9999</i>票</span>
                         </div>
                     </div>
@@ -143,6 +209,7 @@
                 <li><a href="">5</a></li>
                 <li><a href="" rel="next">Next</a></li>
             </ol>
+            <span>跳转到：</span><input type="text" width="60px">
         </div>
     </div>
 </div>
