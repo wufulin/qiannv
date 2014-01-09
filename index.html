@@ -26,6 +26,15 @@
             }
           });
            $(".nano").nanoScroller({alwaysVisible: true});
+
+          $('.goto').submit(function(e) {
+            e.preventDefault();
+            $.post('', {
+              page: $('.goto .page').val()
+            }, function() {
+
+            });
+          });
         })
       })();
     </script>
@@ -244,10 +253,10 @@
                     <li><a href="" rel="next">Next</a></li>
                 </ol>
                 <span>跳转到：</span>
-                <div class="goto">
-                    <input type="text" />
-                    <a class="goto-btn" href="javascript:void(0)"></a>
-                </div>
+                <form class="goto ib">
+                    <input type="text" value="" name="page" class="page" />
+                    <input class="submit ib" type="submit" value="">
+                </form>
             </div>
         </div>
     </div>
