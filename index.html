@@ -17,6 +17,18 @@
                 var _this = $(this);
                 _this.parents('.ddContainer').css('zIndex', '100000000');
                 _this.next().width('auto')
+            },
+            optionChanged:function(){
+                var _this = $(this);
+                $.ajax({
+                   'url':'',
+                   'data':'',
+                   'dataType':'json',
+                   'type':'GET',
+                   'success':function(data){
+                        // 根据所选大区，更新页面
+                   }
+                });
             }
           });
           $('#group-select, #server-select').jqDropDown({
@@ -25,7 +37,7 @@
               _this.next().width('auto')
             }
           });
-           $(".nano").nanoScroller({alwaysVisible: true});
+          $(".nano").nanoScroller({alwaysVisible: true});
         })
       })();
     </script>
@@ -40,46 +52,12 @@
         <div class="left">
             <div id="rank"></div>
             <ul>
-                <li class="odd">
-                    <img src="image/small.png">
-                    <a href="#">骑士游戏名称八字 1234票</a>
-                </li>
-                <li>
-                    <img src="image/small.png">
-                    <a href="#">骑士游戏名称八字 1234票</a>
-                </li>
-                <li class="odd">
-                    <img src="image/small.png">
-                    <a href="#">骑士游戏名称八字 1234票</a>
-                </li>
-                <li>
-                    <img src="image/small.png">
-                    <a href="#">骑士游戏名称八字 1234票</a>
-                </li>
-                <li class="odd">
-                    <img src="image/small.png">
-                    <a href="#">骑士游戏名称八字 1234票</a>
-                </li>
-                <li>
-                    <img src="image/small.png">
-                    <a href="#">骑士游戏名称八字 1234票</a>
-                </li>
-                <li class="odd">
-                    <img src="image/small.png">
-                    <a href="#">骑士游戏名称八字 1234票</a>
-                </li>
-                <li>
-                    <img src="image/small.png">
-                    <a href="#">骑士游戏名称八字 1234票</a>
-                </li>
-                <li class="odd">
-                    <img src="image/small.png">
-                    <a href="#">骑士游戏名称八字 1234票</a>
-                </li>
-                <li>
-                    <img src="image/small.png">
-                    <a href="#">骑士游戏名称八字 1234票</a>
-                </li>
+                {% for xxx in xxx %}
+                    <li class="{{ loop.cycle('odd', 'even')}}">
+                        <img src="{{ xxx.xxx}}">
+                        <a href="#">{{ xxx.xxx|e }} {{ xx.xxx|e }}票</a>
+                    </li>
+                {% endfor %}
             </ul>
         </div>
         <div class="right">
@@ -120,117 +98,23 @@
             </div>
             <div class="nano">
                 <div class="content">
-                    <li>
-                        <div class="detail">
-                            <span class="name">寒烟思</span>
+                    {% for xxx in xxx %}
+                        <li>
+                            <div class="detail">
+                            <span class="name">{{ xxx.name }}</span>
 
                             <a class="figure" href="profile.html">
-                                <img src="image/avatar.png" alt="">
-                                <div class="index">#2311</div>
+                                <img src="{{ xxx.avatar }}" alt="">
+                                <div class="index">{{ xxx.id }}</div>
                             </a>
 
                             <div class="count-div">
-                                <span class="count"><i class="num">9999</i> 票</span>
+                                <span class="count"><i class="num">{{ xxx.count }}</i> 票</span>
                             </div>
                             <a href="javascript:void(0)" class="vote-btn">投她一票</a>
                         </div>
-                    </li>
-
-                    <li>
-                        <div class="detail">
-                            <span class="name">寒烟思</span>
-
-                            <a class="figure" href="profile.html">
-                                <img src="image/avatar.png" alt="">
-                                <div class="index">#2311</div>
-                            </a>
-
-                            <div class="count-div">
-                                <span class="count"><i class="num">9999</i> 票</span>
-                            </div>
-                            <a href="javascript:void(0)" class="vote-btn">投她一票</a>
-                        </div>
-                    </li>
-
-                    <li>
-                        <div class="detail">
-                            <span class="name">寒烟思</span>
-
-                            <a class="figure" href="profile.html">
-                                <img src="image/avatar.png" alt="">
-                                <div class="index">#2311</div>
-                            </a>
-
-                            <div class="count-div">
-                                <span class="count"><i class="num">9999</i> 票</span>
-                            </div>
-                            <a href="javascript:void(0)" class="vote-btn">投她一票</a>
-                        </div>
-                    </li>
-
-                    <li>
-                        <div class="detail">
-                            <span class="name">寒烟思</span>
-
-                            <a class="figure" href="profile.html">
-                                <img src="image/avatar.png" alt="">
-                                <div class="index">#2311</div>
-                            </a>
-
-                            <div class="count-div">
-                                <span class="count"><i class="num">9999</i> 票</span>
-                            </div>
-                            <a href="javascript:void(0)" class="vote-btn">投她一票</a>
-                        </div>
-                    </li>
-
-                    <li>
-                        <div class="detail">
-                            <span class="name">寒烟思</span>
-
-                            <a class="figure" href="profile.html">
-                                <img src="image/avatar.png" alt="">
-                                <div class="index">#2311</div>
-                            </a>
-
-                            <div class="count-div">
-                                <span class="count"><i class="num">9999</i> 票</span>
-                            </div>
-                            <a href="javascript:void(0)" class="vote-btn">投她一票</a>
-                        </div>
-                    </li>
-
-                    <li>
-                        <div class="detail">
-                            <span class="name">寒烟思</span>
-
-                            <a class="figure" href="profile.html">
-                                <img src="image/avatar.png" alt="">
-                                <div class="index">#2311</div>
-                            </a>
-
-                            <div class="count-div">
-                                <span class="count"><i class="num">9999</i> 票</span>
-                            </div>
-                            <a href="javascript:void(0)" class="vote-btn">投她一票</a>
-                        </div>
-                    </li>
-
-                    <li>
-                        <div class="detail">
-                            <span class="name">寒烟思</span>
-
-                            <a class="figure" href="profile.html">
-                                <img src="image/avatar.png" alt="">
-                                <div class="index">#2311</div>
-                            </a>
-
-                            <div class="count-div">
-                                <span class="count"><i class="num">9999</i> 票</span>
-                            </div>
-                            <a href="javascript:void(0)" class="vote-btn">投她一票</a>
-                        </div>
-                    </li>
+                        </li>
+                    {% endfor %}
                 </div>
             </div>
             <div class="footer">
