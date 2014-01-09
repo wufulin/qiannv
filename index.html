@@ -19,13 +19,29 @@
                 _this.next().width('auto')
             }
           });
+
           $('#group-select, #server-select').jqDropDown({
             afterToggle: function() {
                 var _this = $(this);
               _this.next().width('auto')
             }
           });
-           $(".nano").nanoScroller({alwaysVisible: true});
+
+          $(".nano").nanoScroller({alwaysVisible: true});
+
+          $('.vote-btn').click(function(){
+              var external = window.external;
+              external.ICC_VOTE(1);
+          });
+
+          function vote_callback(result){
+              if(result == 0){
+                  alert('投票成功');
+              }else if(result == 1) {
+                  alert('投票失败');
+              }
+          }
+
         })
       })();
     </script>
