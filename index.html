@@ -10,263 +10,271 @@
     <script language="javascript" type="text/javascript" src="js/jquery.nanoscroller.min.js"></script>
     <script language="javascript" type="text/javascript" src="js/jqDropDown.jquery.min.js"></script>
     <script language="javascript" type="text/javascript">
-      (function() {
-        $(function() {
-          $('.area-select').jqDropDown({
-            afterToggle: function() {
-                var _this = $(this);
-                _this.parents('.ddContainer').css('zIndex', '100000000');
-                _this.next().width('auto')
+        (function () {
+            $(function () {
+                $('.area-select').jqDropDown({
+                    afterToggle: function () {
+                        var _this = $(this);
+                        _this.parents('.ddContainer').css('zIndex', '100000000');
+                        _this.next().width('auto')
+                    }
+                });
+
+                $('#group-select, #server-select').jqDropDown({
+                    afterToggle: function () {
+                        var _this = $(this);
+                        _this.next().width('auto')
+                    }
+                });
+
+                $(".nano").nanoScroller({alwaysVisible: true});
+
+                $('.vote-btn').click(function () {
+                    var external = window.external;
+                    external.ICC_VOTE(1);
+                });
+
+            })
+        })();
+
+        function vote_callback(result) {
+            if (result == 0) {
+                alert('投票失败');
+            } else if (result == 1) {
+                alert('投票成功');
             }
-          });
-
-          $('#group-select, #server-select').jqDropDown({
-            afterToggle: function() {
-                var _this = $(this);
-              _this.next().width('auto')
-            }
-          });
-
-          $(".nano").nanoScroller({alwaysVisible: true});
-
-          $('.vote-btn').click(function(){
-              var external = window.external;
-              external.ICC_VOTE(1);
-          });
-
-          function vote_callback(result){
-              if(result == 0){
-                  alert('投票成功');
-              }else if(result == 1) {
-                  alert('投票失败');
-              }
-          }
-
-        })
-      })();
+        }
     </script>
 </head>
 <body>
 <div class="wrapper">
-    <div class="header">
-        <span>可投票数：</span><strong>5</strong>
+<div class="header">
+    <span>可投票数：</span><strong>5</strong>
+</div>
+<div class="main">
+<!-- content goes here -->
+<div class="left">
+    <div id="rank"></div>
+    <ul>
+        <li class="odd">
+            <img src="image/small.png">
+            <a href="#">骑士游戏名称八字 1234票</a>
+        </li>
+        <li>
+            <img src="image/small.png">
+            <a href="#">骑士游戏名称八字 1234票</a>
+        </li>
+        <li class="odd">
+            <img src="image/small.png">
+            <a href="#">骑士游戏名称八字 1234票</a>
+        </li>
+        <li>
+            <img src="image/small.png">
+            <a href="#">骑士游戏名称八字 1234票</a>
+        </li>
+        <li class="odd">
+            <img src="image/small.png">
+            <a href="#">骑士游戏名称八字 1234票</a>
+        </li>
+        <li>
+            <img src="image/small.png">
+            <a href="#">骑士游戏名称八字 1234票</a>
+        </li>
+        <li class="odd">
+            <img src="image/small.png">
+            <a href="#">骑士游戏名称八字 1234票</a>
+        </li>
+        <li>
+            <img src="image/small.png">
+            <a href="#">骑士游戏名称八字 1234票</a>
+        </li>
+        <li class="odd">
+            <img src="image/small.png">
+            <a href="#">骑士游戏名称八字 1234票</a>
+        </li>
+        <li>
+            <img src="image/small.png">
+            <a href="#">骑士游戏名称八字 1234票</a>
+        </li>
+    </ul>
+</div>
+<div class="right">
+    <div class="query">
+        <!-- query content goes here -->
+        <span class="field">大&nbsp;&nbsp;&nbsp;区:</span>
+
+        <select class="area-select" name="area">
+            <option value="all">全部</option>
+            <option value="all">全部</option>
+            <option value="all">全部</option>
+            <option value="all">全部</option>
+            <option value="all">全部</option>
+        </select>
+
+        <span class="field">帮&nbsp;&nbsp;&nbsp;会:</span>
+
+        <select id="group-select" name="group">
+            <option value="all">全部</option>
+            <option value="all">全部</option>
+            <option value="all">全部</option>
+            <option value="all">全部</option>
+            <option value="all">全部</option>
+        </select>
+
+        <br>
+        <span class="field">服务器:</span>
+
+        <select id="server-select" name="server">
+            <option value="all">全部</option>
+            <option value="all">全部</option>
+            <option value="all">全部</option>
+            <option value="all">全部</option>
+            <option value="all">全部</option>
+        </select>
+
+        <input id="search-input" type="search"/>
     </div>
-    <div class="main">
-        <!-- content goes here -->
-        <div class="left">
-            <div id="rank"></div>
-            <ul>
-                <li class="odd">
-                    <img src="image/small.png">
-                    <a href="#">骑士游戏名称八字 1234票</a>
-                </li>
-                <li>
-                    <img src="image/small.png">
-                    <a href="#">骑士游戏名称八字 1234票</a>
-                </li>
-                <li class="odd">
-                    <img src="image/small.png">
-                    <a href="#">骑士游戏名称八字 1234票</a>
-                </li>
-                <li>
-                    <img src="image/small.png">
-                    <a href="#">骑士游戏名称八字 1234票</a>
-                </li>
-                <li class="odd">
-                    <img src="image/small.png">
-                    <a href="#">骑士游戏名称八字 1234票</a>
-                </li>
-                <li>
-                    <img src="image/small.png">
-                    <a href="#">骑士游戏名称八字 1234票</a>
-                </li>
-                <li class="odd">
-                    <img src="image/small.png">
-                    <a href="#">骑士游戏名称八字 1234票</a>
-                </li>
-                <li>
-                    <img src="image/small.png">
-                    <a href="#">骑士游戏名称八字 1234票</a>
-                </li>
-                <li class="odd">
-                    <img src="image/small.png">
-                    <a href="#">骑士游戏名称八字 1234票</a>
-                </li>
-                <li>
-                    <img src="image/small.png">
-                    <a href="#">骑士游戏名称八字 1234票</a>
-                </li>
-            </ul>
-        </div>
-        <div class="right">
-            <div class="query">
-                <!-- query content goes here -->
-                <span class="field">大&nbsp;&nbsp;&nbsp;区:</span>
+    <div class="nano">
+        <div class="content">
+            <li>
+                <div class="detail">
+                    <span class="name">寒烟思</span>
 
-                <select class="area-select" name="area">
-                    <option value="all">全部</option>
-                    <option value="all">全部</option>
-                    <option value="all">全部</option>
-                    <option value="all">全部</option>
-                    <option value="all">全部</option>
-                </select>
+                    <a class="figure" href="profile.html">
+                        <img src="image/avatar.png" alt="">
 
-                <span class="field">帮&nbsp;&nbsp;&nbsp;会:</span>
+                        <div class="index">#2311</div>
+                    </a>
 
-                <select id="group-select" name="group">
-                    <option value="all">全部</option>
-                    <option value="all">全部</option>
-                    <option value="all">全部</option>
-                    <option value="all">全部</option>
-                    <option value="all">全部</option>
-                </select>
-
-                <br>
-                <span class="field">服务器:</span>
-
-                <select id="server-select" name="server">
-                    <option value="all">全部</option>
-                    <option value="all">全部</option>
-                    <option value="all">全部</option>
-                    <option value="all">全部</option>
-                    <option value="all">全部</option>
-                </select>
-
-                <input id="search-input" type="search"/>
-            </div>
-            <div class="nano">
-                <div class="content">
-                    <li>
-                        <div class="detail">
-                            <span class="name">寒烟思</span>
-
-                            <a class="figure" href="profile.html">
-                                <img src="image/avatar.png" alt="">
-                                <div class="index">#2311</div>
-                            </a>
-
-                            <div class="count-div">
-                                <span class="count"><i class="num">9999</i> 票</span>
-                            </div>
-                            <a href="javascript:void(0)" class="vote-btn">投她一票</a>
-                        </div>
-                    </li>
-
-                    <li>
-                        <div class="detail">
-                            <span class="name">寒烟思</span>
-
-                            <a class="figure" href="profile.html">
-                                <img src="image/avatar.png" alt="">
-                                <div class="index">#2311</div>
-                            </a>
-
-                            <div class="count-div">
-                                <span class="count"><i class="num">9999</i> 票</span>
-                            </div>
-                            <a href="javascript:void(0)" class="vote-btn">投她一票</a>
-                        </div>
-                    </li>
-
-                    <li>
-                        <div class="detail">
-                            <span class="name">寒烟思</span>
-
-                            <a class="figure" href="profile.html">
-                                <img src="image/avatar.png" alt="">
-                                <div class="index">#2311</div>
-                            </a>
-
-                            <div class="count-div">
-                                <span class="count"><i class="num">9999</i> 票</span>
-                            </div>
-                            <a href="javascript:void(0)" class="vote-btn">投她一票</a>
-                        </div>
-                    </li>
-
-                    <li>
-                        <div class="detail">
-                            <span class="name">寒烟思</span>
-
-                            <a class="figure" href="profile.html">
-                                <img src="image/avatar.png" alt="">
-                                <div class="index">#2311</div>
-                            </a>
-
-                            <div class="count-div">
-                                <span class="count"><i class="num">9999</i> 票</span>
-                            </div>
-                            <a href="javascript:void(0)" class="vote-btn">投她一票</a>
-                        </div>
-                    </li>
-
-                    <li>
-                        <div class="detail">
-                            <span class="name">寒烟思</span>
-
-                            <a class="figure" href="profile.html">
-                                <img src="image/avatar.png" alt="">
-                                <div class="index">#2311</div>
-                            </a>
-
-                            <div class="count-div">
-                                <span class="count"><i class="num">9999</i> 票</span>
-                            </div>
-                            <a href="javascript:void(0)" class="vote-btn">投她一票</a>
-                        </div>
-                    </li>
-
-                    <li>
-                        <div class="detail">
-                            <span class="name">寒烟思</span>
-
-                            <a class="figure" href="profile.html">
-                                <img src="image/avatar.png" alt="">
-                                <div class="index">#2311</div>
-                            </a>
-
-                            <div class="count-div">
-                                <span class="count"><i class="num">9999</i> 票</span>
-                            </div>
-                            <a href="javascript:void(0)" class="vote-btn">投她一票</a>
-                        </div>
-                    </li>
-
-                    <li>
-                        <div class="detail">
-                            <span class="name">寒烟思</span>
-
-                            <a class="figure" href="profile.html">
-                                <img src="image/avatar.png" alt="">
-                                <div class="index">#2311</div>
-                            </a>
-
-                            <div class="count-div">
-                                <span class="count"><i class="num">9999</i> 票</span>
-                            </div>
-                            <a href="javascript:void(0)" class="vote-btn">投她一票</a>
-                        </div>
-                    </li>
+                    <div class="count-div">
+                        <span class="count"><i class="num">9999</i> 票</span>
+                    </div>
+                    <a href="javascript:void(0)" class="vote-btn">投她一票</a>
                 </div>
-            </div>
-            <div class="footer">
-                <ol class="pagination">
-                    <li><a href="" rel="prev">Prev</a></li>
-                    <li><a href="">1</a></li>
-                    <li class="selected">2</li>
-                    <li><a href="">3</a></li>
-                    <li><a href="">4</a></li>
-                    <li><a href="">5</a></li>
-                    <li><a href="" rel="next">Next</a></li>
-                </ol>
-                <span>跳转到：</span>
-                <div class="goto">
-                    <input type="text" />
-                    <a class="goto-btn" href="javascript:void(0)"></a>
+            </li>
+
+            <li>
+                <div class="detail">
+                    <span class="name">寒烟思</span>
+
+                    <a class="figure" href="profile.html">
+                        <img src="image/avatar.png" alt="">
+
+                        <div class="index">#2311</div>
+                    </a>
+
+                    <div class="count-div">
+                        <span class="count"><i class="num">9999</i> 票</span>
+                    </div>
+                    <a href="javascript:void(0)" class="vote-btn">投她一票</a>
                 </div>
-            </div>
+            </li>
+
+            <li>
+                <div class="detail">
+                    <span class="name">寒烟思</span>
+
+                    <a class="figure" href="profile.html">
+                        <img src="image/avatar.png" alt="">
+
+                        <div class="index">#2311</div>
+                    </a>
+
+                    <div class="count-div">
+                        <span class="count"><i class="num">9999</i> 票</span>
+                    </div>
+                    <a href="javascript:void(0)" class="vote-btn">投她一票</a>
+                </div>
+            </li>
+
+            <li>
+                <div class="detail">
+                    <span class="name">寒烟思</span>
+
+                    <a class="figure" href="profile.html">
+                        <img src="image/avatar.png" alt="">
+
+                        <div class="index">#2311</div>
+                    </a>
+
+                    <div class="count-div">
+                        <span class="count"><i class="num">9999</i> 票</span>
+                    </div>
+                    <a href="javascript:void(0)" class="vote-btn">投她一票</a>
+                </div>
+            </li>
+
+            <li>
+                <div class="detail">
+                    <span class="name">寒烟思</span>
+
+                    <a class="figure" href="profile.html">
+                        <img src="image/avatar.png" alt="">
+
+                        <div class="index">#2311</div>
+                    </a>
+
+                    <div class="count-div">
+                        <span class="count"><i class="num">9999</i> 票</span>
+                    </div>
+                    <a href="javascript:void(0)" class="vote-btn">投她一票</a>
+                </div>
+            </li>
+
+            <li>
+                <div class="detail">
+                    <span class="name">寒烟思</span>
+
+                    <a class="figure" href="profile.html">
+                        <img src="image/avatar.png" alt="">
+
+                        <div class="index">#2311</div>
+                    </a>
+
+                    <div class="count-div">
+                        <span class="count"><i class="num">9999</i> 票</span>
+                    </div>
+                    <a href="javascript:void(0)" class="vote-btn">投她一票</a>
+                </div>
+            </li>
+
+            <li>
+                <div class="detail">
+                    <span class="name">寒烟思</span>
+
+                    <a class="figure" href="profile.html">
+                        <img src="image/avatar.png" alt="">
+
+                        <div class="index">#2311</div>
+                    </a>
+
+                    <div class="count-div">
+                        <span class="count"><i class="num">9999</i> 票</span>
+                    </div>
+                    <a href="javascript:void(0)" class="vote-btn">投她一票</a>
+                </div>
+            </li>
         </div>
     </div>
+    <div class="footer">
+        <ol class="pagination">
+            <li><a href="" rel="prev">Prev</a></li>
+            <li><a href="">1</a></li>
+            <li class="selected">2</li>
+            <li><a href="">3</a></li>
+            <li><a href="">4</a></li>
+            <li><a href="">5</a></li>
+            <li><a href="" rel="next">Next</a></li>
+        </ol>
+        <span>跳转到：</span>
+
+        <div class="goto">
+            <input type="text"/>
+            <a class="goto-btn" href="javascript:void(0)"></a>
+        </div>
+    </div>
+</div>
+</div>
 </div>
 </body>
 </html>
