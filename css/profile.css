@@ -36,7 +36,9 @@ div.content > a {
     padding:5px;
     font-size: 13px;
 }
-
+div.content > a.back:hover {
+    color: #6bbeff;
+}
 /* main */
 div.main {
     background-color: #18275e;
