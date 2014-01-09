@@ -11,6 +11,12 @@ body {
     text-align: center;
 }
 
+.ib {
+  display:inline-block;
+  *display:inline;
+  *zoom:1;
+}
+
 .wrapper {
     width: 620px;
     height: 440px;
@@ -235,4 +241,28 @@ div.footer > input {
 .ddOptionList {
   min-width: 104px;
   _width: 104px;
+}
+
+.goto {
+    background: #18275e;
+    border: 1px solid #122051;
+    font-size: 0;
+}
+
+.goto .page {
+    width: 24px;
+    height: 18px;
+    border: none;
+    padding: 1px;
+    border-right: 1px solid #122051;
+    background: #18275e;
+}
+
+.goto .submit {
+    border: none;
+    width: 22px;
+    height: 20px;
+    vertical-align: top;
+    background: url(../image/sprite.png) #18275e -179px -43px;
+    cursor: pointer;
 }
