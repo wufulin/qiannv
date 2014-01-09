@@ -236,3 +236,8 @@ div.footer > input {
   min-width: 104px;
   _width: 104px;
 }
+
+.goto {
+    background: #18275e;
+    border: 1px solid #122051;
+}
