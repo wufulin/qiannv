@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>倩女其姝幽梦天使竞选（初赛）</title>
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+    <title>倩女其姝幽梦天使竞选（初赛）</title>
     <link rel="stylesheet" type="text/css" href="js/jqDropDown.css"/>
     <link rel="stylesheet" type="text/css" href="css/style.css"/>
     <link rel="stylesheet" type="text/css" href="css/nanoscroller.css"/>
@@ -42,20 +42,20 @@
                     external.ICC_VOTE(1);
                 });
 
-                $('.search-form').submit(function(e) {
-                  e.preventDefault();
-                  $.post('', {
-                    page: $('#search-input').val()
-                  }, function() {
+                $('.search-form').submit(function (e) {
+                    e.preventDefault();
+                    $.post('', {
+                        page: $('#search-input').val()
+                    }, function () {
 
-                  });
+                    });
                 });
 
                 var phSearch = Placeholder('#search-input', '输入选手名称或编号');
                 phSearch.css({
-                  color: '#243E76',
-                  fontSize: '12px',
-                  lineHeight: '20px'
+                    color: '#243E76',
+                    fontSize: '12px',
+                    lineHeight: '20px'
                 });
             });
 
@@ -85,15 +85,15 @@
             if (!/^\s*$/.test(input.val())) {
                 ph.hide();
             }
-            ph.click(function() {
+            ph.click(function () {
                 input.focus();
             });
             // focus再hide掉placeholder，可防止某些情况下没有click而直接focus了input
             // 例如：tab键focus
-            input.focus(function() {
+            input.focus(function () {
                 ph.hide();
             });
-            input.blur(function() {
+            input.blur(function () {
                 if (!input.val()) {
                     ph.show();
                 }
@@ -104,7 +104,7 @@
             /**
              * 修改提示文案
              */
-            this.value = function(value) {
+            this.value = function (value) {
                 if (!value) {
                     return ph.text();
                 }
@@ -115,18 +115,18 @@
              * 由于容器`display:none`时无法正确定位，因此提供此方法
              * 在`display != 'none'`时调用可重置位置
              */
-            this.reset = function() {
+            this.reset = function () {
                 setStyle();
             };
 
-            this.css = function(styles) {
+            this.css = function (styles) {
                 ph.css(styles);
             };
 
             function setStyle() {
                 var pos = input.position();
 
-                $.each('paddingTop paddingRight paddingBottom paddingLeft'.split(' '), function(index, item) {
+                $.each('paddingTop paddingRight paddingBottom paddingLeft'.split(' '), function (index, item) {
                     ph.css(item, input.css(item));
                 });
 
@@ -239,8 +239,8 @@
         </select>
 
         <form class="search-form ib">
-          <input id="search-input" type="text" class="search"/>
-          <input class="submit ib" type="submit" value="" />
+            <input id="search-input" type="text" class="search"/>
+            <input class="submit ib" type="submit" value=""/>
         </form>
     </div>
     <div class="nano">
@@ -365,8 +365,6 @@
             <input class="submit ib" type="submit" value="">
         </form>
     </div>
-</div>
-</div>
 </div>
 </div>
 </div>
