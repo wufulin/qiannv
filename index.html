@@ -1,167 +1,30 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>倩女其姝幽梦天使竞选（初赛）</title>
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
-    <link rel="stylesheet" type="text/css" href="js/jqDropDown.css"/>
-    <link rel="stylesheet" type="text/css" href="css/style.css"/>
-    <link rel="stylesheet" type="text/css" href="css/nanoscroller.css"/>
-    <script language="javascript" type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
-    <script language="javascript" type="text/javascript" src="js/jquery.nanoscroller.min.js"></script>
-    <script language="javascript" type="text/javascript" src="js/jqDropDown.jquery.min.js"></script>
-    <script language="javascript" type="text/javascript">
-        (function () {
-            $(function () {
-                $('.area-select').jqDropDown({
-                    afterToggle: function () {
-                        var _this = $(this);
-                        _this.parents('.ddContainer').css('zIndex', '100000000');
-                        _this.next().width('auto')
-                    },
-                    optionChanged: function () {
-                        var _this = $(this);
-                        $.ajax({
-                            'url': '',
-                            'data': '',
-                            'dataType': 'json',
-                            'type': 'GET',
-                            'success': function (data) {
-                                // 根据所选大区，更新页面
-                            }
-                        });
-                    }
-                });
-
-                $('#group-select, #server-select').jqDropDown({
-                    afterToggle: function () {
-                        var _this = $(this);
-                        _this.next().width('auto')
-                    }
-                });
-
-                $(".nano").nanoScroller({alwaysVisible: true});
-
-                $('.goto').submit(function (e) {
-                    e.preventDefault();
-                    $.post('', {
-                        page: $('.goto .page').val()
-                    }, function () {
-
-                    });
-                });
-
-                $('.vote-btn').click(function () {
-                    var external = window.external;
-                    external.ICC_VOTE(1);
-                });
-            })
-        })();
-
-        function vote_callback(result) {
-            if (result == 0) {
-                alert('投票失败');
-            } else if (result == 1) {
-                alert('投票成功');
-            }
-        }
-
-        function Placeholder(input, text) {
-            if (!(this instanceof Placeholder)) {
-                return new Placeholder(input, text);
-            }
-
-            input = $(input);
-
-            if (!input.length) {
-                return;
-            }
-
-            var ph = $('<span class="placeholder">' + text + '</span>');
-            input.after(ph);
-            if (!/^\s*$/.test(input.val())) {
-                ph.hide();
-            }
-            ph.click(function () {
-                input.focus();
-            });
-            // focus再hide掉placeholder，可防止某些情况下没有click而直接focus了input
-            // 例如：tab键focus
-            input.focus(function () {
-                ph.hide();
-            });
-            input.blur(function () {
-                if (!input.val()) {
-                    ph.show();
-                }
-            });
-
-            setStyle();
-
-            /**
-             * 修改提示文案
-             */
-            this.value = function (value) {
-                if (!value) {
-                    return ph.text();
-                }
-                ph.text(value);
-            };
-
-            /**
-             * 由于容器`display:none`时无法正确定位，因此提供此方法
-             * 在`display != 'none'`时调用可重置位置
-             */
-            this.reset = function () {
-                setStyle();
-            };
-
-            this.css = function (styles) {
-                ph.css(styles);
-            };
-
-            function setStyle() {
-                var pos = input.position();
-
-                $.each('paddingTop paddingRight paddingBottom paddingLeft'.split(' '), function (index, item) {
-                    ph.css(item, input.css(item));
-                });
-
-                ph.css({
-                    position: 'absolute',
-                    top: pos.top + getCssNum('borderTopWidth') + getCssNum('marginTop') + 'px',
-                    left: pos.left + getCssNum('borderLeftWidth') + getCssNum('marginLeft') + 'px',
-                    //width: '100px', //input.width(),
-                    //fontSize: input.css('fontSize'),
-                    fontSize: '14px',
-                    fontFamily: input.css('fontFamily'),
-                    height: input.css('height'),
-                    lineHeight: input.css('lineHeight'),
-                    color: '#AAA',
-                    cursor: 'text'
-                });
-            }
-
-            function getCssNum(attr) {
-                var num = input.css(attr).match(/^\d+/);
-                return num ? +num : 0;
-            }
-        }
-    </script>
+    <title>倩女其姝幽梦天使竞选（初赛）</title>
+	<link rel="stylesheet" type="text/css" href="{{url_prefix}}js/jqDropDown.css"/>
+	<link rel="stylesheet" type="text/css" href="{{url_prefix}}css/style.css"/>
+	<link rel="stylesheet" type="text/css" href="{{url_prefix}}css/nanoscroller.css"/>
+	<script language="javascript" type="text/javascript" src="{{url_prefix}}js/jquery-1.10.2.min.js"></script>
+	<script language="javascript" type="text/javascript" src="{{url_prefix}}js/jquery.nanoscroller.min.js"></script>
+	<script language="javascript" type="text/javascript" src="{{url_prefix}}js/jqDropDown.jquery.min.js"></script>
+	<script language="javascript" type="text/javascript" src="{{url_prefix}}js/qn.js"></script>
 </head>
 <body>
 <div class="wrapper">
     <div class="header">
-        <span>可投票数：</span><strong>5</strong>
+		<span>可投票数：</span><strong>{{vote_count}}</strong>
     </div>
     <div class="main">
         <!-- content goes here -->
         <div class="left">
             <div id="rank"></div>
             <ul>
-                {% for xxx in xxx %}
+                {% for user in top_voter_list %}
                 <li class="{{ loop.cycle('odd', 'even')}}">
-                    <img src="{{ xxx.xxx}}">
-                    <a href="#">{{ xxx.xxx|e }} {{ xx.xxx|e }}票</a>
+                    <img src="{{ user.avatar}}">
+                    <a href="#">{{ user.nick|e|truncate(8) }} {{ user.vote_count|e }}票</a>
                 </li>
                 {% endfor %}
             </ul>
@@ -169,57 +32,53 @@
         <div class="right">
             <div class="query">
                 <!-- query content goes here -->
+				<form name="query" id="query-all" action="./" method="GET">
                 <span class="field">大&nbsp;&nbsp;&nbsp;区:</span>
 
-                <select class="area-select" name="area">
-                    <option value="all">全部</option>
-                    <option value="all">全部</option>
-                    <option value="all">全部</option>
-                    <option value="all">全部</option>
-                    <option value="all">全部</option>
+                <select id="area-select" name="area">
+					{% for a in area_list %}
+                    <option value="{{a.id}}" selected="{% if a.id == area %}selected{%endif%}">{{a.name}}</option>
+					{% endfor %}
                 </select>
 
                 <span class="field">帮&nbsp;&nbsp;&nbsp;会:</span>
 
                 <select id="group-select" name="group">
-                    <option value="all">全部</option>
-                    <option value="all">全部</option>
-                    <option value="all">全部</option>
-                    <option value="all">全部</option>
-                    <option value="all">全部</option>
+					{% for g in group_list %}
+                    <option value="{{g.id}}" selecte="{% if g.id == group %}selected{%endif%}">{{g.name}}</option>
+					{% endfor %}
                 </select>
 
                 <br>
                 <span class="field">服务器:</span>
 
                 <select id="server-select" name="server">
-                    <option value="all">全部</option>
-                    <option value="all">全部</option>
-                    <option value="all">全部</option>
-                    <option value="all">全部</option>
-                    <option value="all">全部</option>
+					{% for s in server_list %}
+                    <option value="{{s.id}}" selected="{% if s.id == server %}selected{%endif%}">{{s.name}}</option>
+					{% endfor %}
                 </select>
+				</form>
 
                 <form class="search-form ib">
-                    <input id="search-input" type="text" class="search"/>
+                    <input id="search-input" name="search" type="text" class="search"/>
                     <input class="submit ib" type="submit" value=""/>
                 </form>
             </div>
             <div class="nano">
                 <div class="content">
-                    {% for xxx in xxx %}
+                    {% for competitor in competitor_list %}
                     <li>
                         <div class="detail">
-                            <span class="name">{{ xxx.name }}</span>
+                            <span class="name">{{ competitor.name|e }}</span>
 
                             <a class="figure" href="profile.html">
-                                <img src="{{ xxx.avatar }}" alt="">
+                                <img src="{{ competitor.avatar }}" alt="">
 
-                                <div class="index">{{ xxx.id }}</div>
+                                <div class="index">{{ competitor.id }}</div>
                             </a>
 
                             <div class="count-div">
-                                <span class="count"><i class="num">{{ xxx.count }}</i> 票</span>
+                                <span class="count"><i class="num">{{ competitor.count }}</i> 票</span>
                             </div>
                             <a href="javascript:void(0)" class="vote-btn">投她一票</a>
                         </div>
@@ -228,18 +87,33 @@
                 </div>
             </div>
             <div class="footer">
-                <ol class="pagination">
-                    <li><a href="" rel="prev">Prev</a></li>
-                    <li><a href="">1</a></li>
-                    <li class="selected">2</li>
-                    <li><a href="">3</a></li>
-                    <li><a href="">4</a></li>
-                    <li><a href="">5</a></li>
-                    <li><a href="" rel="next">Next</a></li>
+				<ol class="pagination">
+				{% if current_page > 1 %}
+					<li><a href="./?area={{area}}&group={{group}}&server={{server}}&page={{current_page-1}}" rel="prev">Prev</a></li>
+					<li><a href="./?area={{area}}&group={{group}}&server={{server}}&page=1">1</a></li>
+				{% endif %}
+
+				{% if current_page > 2 %}
+					<li><a href="./?area={{area}}&group={{group}}&server={{server}}&page=2">2</a></li>
+				{% endif %}
+					<li class="selected">{{current_page}}</li>
+				{% if current_page < total_page - 1 %}
+					<li><a href="./?area={{area}}&group={{group}}&server={{server}}&page={{current_page+1}}">{{current_page + 1}}</a></li>
+				{% endif %}
+				{% if current_page < total_page - 2 %}
+					<li><a href="./?area={{area}}&group={{group}}&server={{server}}&page={{current_page+2}}">{{current_page + 2}}</a></li>
+				{% endif %}
+				{% if current_page < total_page %}
+					<li><a href="./?area={{area}}&group={{group}}&server={{server}}&page={{total_page}}">{{total_page}}</a></li>
+					<li><a href="./?area={{area}}&group={{group}}&server={{server}}&page={{current_page+1}}" rel="next">Next</a></li>
+				{% endif %}
                 </ol>
                 <span>跳转到：</span>
 
-                <form class="goto ib">
+                <form class="goto ib" action="./" method="GET">
+                    <input type="hidden" value="{{area}}" name="area"/>
+                    <input type="hidden" value="{{group}}" name="group"/>
+                    <input type="hidden" value="{{server}}" name="server"/>
                     <input type="text" value="" name="page" class="page"/>
                     <input class="submit ib" type="submit" value="">
                 </form>
