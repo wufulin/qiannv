@@ -28,7 +28,19 @@ body {
 /* header */
 div.header {
     height: 25px;
-    text-align: center;
+}
+div.header strong {
+    color: #ffffff;
+}
+div.header span {
+    display: inline-block;
+    width: 100px;
+    text-align: right;
+    margin-left: 15px;
+}
+div.header strong.peroid {
+    display: inline-block;
+    margin-left: 30px;
 }
 
 /* content */
@@ -58,9 +70,9 @@ div.left ul {
     margin-top: -5px;
 }
 
-div.left a {
-    text-decoration: none;
+div.left span {
     position: relative;
+    display: inline-block;
     left: 5px;
     top: -5px;
     font-size: 13px;
@@ -270,7 +282,7 @@ div.footer > input {
 
 .search-form .search {
   padding-left: 5px;
-  width: 132px;
+  width: 127px;
 }
 
 .goto .page {
