@@ -105,9 +105,10 @@ div.query {
     padding: 15px 0px 5px 0px;
 }
 
-div.query-inner {
+form.query-inner {
     text-align: left;
     vertical-align: middle;
+    float: left;
 }
 
 .query .field {

@@ -210,7 +210,7 @@
 <div class="right">
     <div class="query">
         <!-- query content goes here -->
-        <div class="query-inner">
+        <form class="query-inner" id="query1" name="query" action="./" method="GET">
             <span class="field">大&nbsp;&nbsp;&nbsp;区:</span>
 
             <select class="area-select" name="area">
@@ -230,9 +230,9 @@
                 <option value="all">全部</option>
                 <option value="all">全部</option>
             </select>
-        </div>
+        </form>
 
-        <div class="query-inner">
+        <form class="query-inner" id="query2" name="query" action="./" method="GET">
             <span class="field">服务器:</span>
 
             <select id="server-select" name="server">
@@ -242,12 +242,12 @@
                 <option value="all">全部</option>
                 <option value="all">全部</option>
             </select>
+        </form>
 
-            <form class="search-form ib">
+        <form class="search-form ib">
                 <input id="search-input" type="text" class="search"/>
                 <input class="submit ib" type="submit" value=""/>
-            </form>
-        </div>
+        </form>
     </div>
     <div class="nano">
         <div class="content">
