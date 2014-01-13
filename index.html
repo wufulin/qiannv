@@ -27,7 +27,7 @@
             <ul>
                 {% for user in top_voter_list %}
                 <li class="{{ loop.cycle('odd', 'even')}}">
-                    <img src="{{ user.avatar}}">
+                    <img src="{{ user.avatar }}">
                     <span>{{ user.nick|e|truncate(8) }} {{ user.vote_count|e }}票</span>
                 </li>
                 {% endfor %}
@@ -36,8 +36,7 @@
         <div class="right">
             <div class="query">
                 <!-- query content goes here -->
-                <div class="query-inner">
-                <form name="query" id="query-all" action="./" method="GET">
+                <form class="query-inner" id="query1" name="query" action="./" method="GET">
                     <span class="field">大&nbsp;&nbsp;&nbsp;区:</span>
 
                     <select id="area-select" name="area">
@@ -54,8 +53,8 @@
                         {% endfor %}
                     </select>
                 </form>
-                </div>
-                
+
+                <form class="query-inner" id="query2" name="query" action="./" method="GET">
                     <span class="field">服务器:</span>
 
                     <select id="server-select" name="server">
@@ -63,9 +62,9 @@
                         <option value="{{s.id}}" selected="{% if s.id == server %}selected{%endif%}">{{s.name}}</option>
                         {% endfor %}
                     </select>
+                </form>
 
-
-                <form class="search-form ib">
+                <form class="search-form ib" id="search-form" action="./" method="GET" style="float: left">
                     <input id="search-input" name="search" type="text" class="search"/>
                     <input class="submit ib" type="submit" value=""/>
                 </form>
