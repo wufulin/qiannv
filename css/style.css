@@ -12,9 +12,9 @@ body {
 }
 
 .ib {
-  display:inline-block;
-  *display:inline;
-  *zoom:1;
+    display: inline-block;
+    *display: inline;
+    *zoom: 1;
 }
 
 .wrapper {
@@ -28,7 +28,22 @@ body {
 /* header */
 div.header {
     height: 25px;
-    text-align: center;
+}
+
+div.header strong {
+    color: #ffffff;
+}
+
+div.header span {
+    display: inline-block;
+    width: 100px;
+    text-align: right;
+    margin-left: 15px;
+}
+
+div.header strong.peroid {
+    display: inline-block;
+    margin-left: 30px;
 }
 
 /* content */
@@ -58,9 +73,9 @@ div.left ul {
     margin-top: -5px;
 }
 
-div.left a {
-    text-decoration: none;
+div.left span {
     position: relative;
+    display: inline-block;
     left: 5px;
     top: -5px;
     font-size: 13px;
@@ -76,6 +91,7 @@ div.left li img {
     position: relative;
     left: 5px;
 }
+
 div.left li.odd {
     background-color: #1e2e6c;
 }
@@ -95,9 +111,16 @@ div.query {
     z-index: 10000;
 }
 
+form.query-inner {
+    text-align: left;
+    vertical-align: middle;
+    float: left;
+}
+
 .query .field {
-  display: inline-block;
-  width: 50px;
+    display: inline-block;
+    width: 50px;
+    margin-top: 3px;
 }
 
 div.right > .nano {
@@ -135,7 +158,7 @@ div.count-div {
     padding: 3px 0px;
 }
 
-span.count ,
+span.count,
 span.count i {
     color: #6bbeff;
 }
@@ -150,6 +173,10 @@ div.detail > span.name {
 a.figure {
     position: relative;
     display: block;
+}
+
+.figure img {
+    border: 0;
 }
 
 a.figure > div.index {
@@ -217,43 +244,46 @@ div.footer > input {
 }
 
 .ddContainer {
-  display: inline-block;
-  *display: inline;
-  *zoom: 1;
-  margin: 0 10px 5px 0;
-  vertical-align: top;
-  z-index: 10000;
+    display: inline-block;
+    *display: inline;
+    *zoom: 1;
+    margin: 0 10px 5px 0;
+    vertical-align: top;
+    z-index: 10000;
 }
+
 .ddContainer .ddToggle {
-  border-color: #122051!important;
-  background: #18275E;
-  color: white;
-  font-size:12px;
-  height: 16px;
-  line-height: 16px;
-  width: 80px!important;
+    border-color: #122051 !important;
+    background: #18275E;
+    color: white;
+    font-size: 12px;
+    height: 16px;
+    line-height: 16px;
+    width: 80px !important;
 }
+
 .ddContainer .ddToggle span {
-  border-color: #288bdc transparent transparent;
+    border-color: #288bdc transparent transparent;
 }
+
 .ddOptionList {
-  min-width: 104px;
-  _width: 104px;
+    min-width: 104px;
+    _width: 104px;
 }
 
 .search-form {
-  position:relative;
-  font-size: 0;
-  border: 1px solid #122051;
+    position: relative;
+    font-size: 0;
+    border: 1px solid #122051;
 }
 
 .search-form .submit {
-  vertical-align: top;
-  width: 22px;
-  height: 20px;
-  background: url(../image/sprite.png) #18275e -182px 2px;
-  cursor: pointer;
-  border: none;
+    vertical-align: top;
+    width: 22px;
+    height: 20px;
+    background: url(../image/sprite.png) #18275e -182px 2px;
+    cursor: pointer;
+    border: none;
 }
 
 .goto {
@@ -262,7 +292,7 @@ div.footer > input {
     font-size: 0;
 }
 
-.goto .page,.search-form .search {
+.goto .page, .search-form .search {
     height: 18px;
     border: none;
     padding: 1px;
@@ -271,8 +301,8 @@ div.footer > input {
 }
 
 .search-form .search {
-  padding-left: 5px;
-  width: 132px;
+    padding-left: 5px;
+    width: 127px;
 }
 
 .goto .page {

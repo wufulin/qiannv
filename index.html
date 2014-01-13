@@ -3,19 +3,23 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
     <title>倩女其姝幽梦天使竞选（初赛）</title>
-	<link rel="stylesheet" type="text/css" href="{{url_prefix}}js/jqDropDown.css"/>
-	<link rel="stylesheet" type="text/css" href="{{url_prefix}}css/style.css"/>
-	<link rel="stylesheet" type="text/css" href="{{url_prefix}}css/nanoscroller.css"/>
-	<script language="javascript" type="text/javascript" src="{{url_prefix}}js/jquery-1.10.2.min.js"></script>
-	<script language="javascript" type="text/javascript" src="{{url_prefix}}js/jquery.nanoscroller.min.js"></script>
-	<script language="javascript" type="text/javascript" src="{{url_prefix}}js/jqDropDown.jquery.min.js"></script>
-	<script language="javascript" type="text/javascript" src="{{url_prefix}}js/qn.js"></script>
+    <link rel="stylesheet" type="text/css" href="{{url_prefix}}js/jqDropDown.css"/>
+    <link rel="stylesheet" type="text/css" href="{{url_prefix}}css/style.css"/>
+    <link rel="stylesheet" type="text/css" href="{{url_prefix}}css/nanoscroller.css"/>
+    <script language="javascript" type="text/javascript" src="{{url_prefix}}js/jquery-1.10.2.min.js"></script>
+    <script language="javascript" type="text/javascript" src="{{url_prefix}}js/jquery.nanoscroller.min.js"></script>
+    <script language="javascript" type="text/javascript" src="{{url_prefix}}js/jqDropDown.jquery.min.js"></script>
+    <script language="javascript" type="text/javascript" src="{{url_prefix}}js/qn.js"></script>
 </head>
 <body>
 <div class="wrapper">
     <div class="header">
-		<span>可投票数：</span><strong>{{vote_count}}</strong>
+        <span class="date">投票时间：</span><strong>2014/1/15-2014/2/14</strong>
+        <span class="total-vote">总可投票数：</span><strong>5</strong>
+        <span class="today-vote">今日有效票数：</span><strong>{{vote_count}}</strong>
+        <strong class="peroid">(初赛)</strong>
     </div>
+
     <div class="main">
         <!-- content goes here -->
         <div class="left">
@@ -23,8 +27,8 @@
             <ul>
                 {% for user in top_voter_list %}
                 <li class="{{ loop.cycle('odd', 'even')}}">
-                    <img src="{{ user.avatar}}">
-                    <a href="#">{{ user.nick|e|truncate(8) }} {{ user.vote_count|e }}票</a>
+                    <img src="{{ user.avatar }}">
+                    <span>{{ user.nick|e|truncate(8) }} {{ user.vote_count|e }}票</span>
                 </li>
                 {% endfor %}
             </ul>
@@ -32,34 +36,35 @@
         <div class="right">
             <div class="query">
                 <!-- query content goes here -->
-				<form name="query" id="query-all" action="./" method="GET">
-                <span class="field">大&nbsp;&nbsp;&nbsp;区:</span>
+                <form class="query-inner" id="query1" name="query" action="./" method="GET">
+                    <span class="field">大&nbsp;&nbsp;&nbsp;区:</span>
 
-                <select id="area-select" name="area">
-					{% for a in area_list %}
-                    <option value="{{a.id}}" selected="{% if a.id == area %}selected{%endif%}">{{a.name}}</option>
-					{% endfor %}
-                </select>
+                    <select id="area-select" name="area">
+                        {% for a in area_list %}
+                        <option value="{{a.id}}" selected="{% if a.id == area %}selected{%endif%}">{{a.name}}</option>
+                        {% endfor %}
+                    </select>
 
-                <span class="field">帮&nbsp;&nbsp;&nbsp;会:</span>
+                    <span class="field">帮&nbsp;&nbsp;&nbsp;会:</span>
 
-                <select id="group-select" name="group">
-					{% for g in group_list %}
-                    <option value="{{g.id}}" selecte="{% if g.id == group %}selected{%endif%}">{{g.name}}</option>
-					{% endfor %}
-                </select>
+                    <select id="group-select" name="group">
+                        {% for g in group_list %}
+                        <option value="{{g.id}}" selected="{% if g.id == group %}selected{%endif%}">{{g.name}}</option>
+                        {% endfor %}
+                    </select>
+                </form>
 
-                <br>
-                <span class="field">服务器:</span>
+                <form class="query-inner" id="query2" name="query" action="./" method="GET">
+                    <span class="field">服务器:</span>
 
-                <select id="server-select" name="server">
-					{% for s in server_list %}
-                    <option value="{{s.id}}" selected="{% if s.id == server %}selected{%endif%}">{{s.name}}</option>
-					{% endfor %}
-                </select>
-				</form>
+                    <select id="server-select" name="server">
+                        {% for s in server_list %}
+                        <option value="{{s.id}}" selected="{% if s.id == server %}selected{%endif%}">{{s.name}}</option>
+                        {% endfor %}
+                    </select>
+                </form>
 
-                <form class="search-form ib">
+                <form class="search-form ib" id="search-form" action="./" method="GET" style="float: left">
                     <input id="search-input" name="search" type="text" class="search"/>
                     <input class="submit ib" type="submit" value=""/>
                 </form>
@@ -87,26 +92,32 @@
                 </div>
             </div>
             <div class="footer">
-				<ol class="pagination">
-				{% if current_page > 1 %}
-					<li><a href="./?area={{area}}&group={{group}}&server={{server}}&page={{current_page-1}}" rel="prev">Prev</a></li>
-					<li><a href="./?area={{area}}&group={{group}}&server={{server}}&page=1">1</a></li>
-				{% endif %}
+                <ol class="pagination">
+                    {% if current_page > 1 %}
+                    <li><a href="./?area={{area}}&group={{group}}&server={{server}}&page={{current_page-1}}" rel="prev">Prev</a>
+                    </li>
+                    <li><a href="./?area={{area}}&group={{group}}&server={{server}}&page=1">1</a></li>
+                    {% endif %}
 
-				{% if current_page > 2 %}
-					<li><a href="./?area={{area}}&group={{group}}&server={{server}}&page=2">2</a></li>
-				{% endif %}
-					<li class="selected">{{current_page}}</li>
-				{% if current_page < total_page - 1 %}
-					<li><a href="./?area={{area}}&group={{group}}&server={{server}}&page={{current_page+1}}">{{current_page + 1}}</a></li>
-				{% endif %}
-				{% if current_page < total_page - 2 %}
-					<li><a href="./?area={{area}}&group={{group}}&server={{server}}&page={{current_page+2}}">{{current_page + 2}}</a></li>
-				{% endif %}
-				{% if current_page < total_page %}
-					<li><a href="./?area={{area}}&group={{group}}&server={{server}}&page={{total_page}}">{{total_page}}</a></li>
-					<li><a href="./?area={{area}}&group={{group}}&server={{server}}&page={{current_page+1}}" rel="next">Next</a></li>
-				{% endif %}
+                    {% if current_page > 2 %}
+                    <li><a href="./?area={{area}}&group={{group}}&server={{server}}&page=2">2</a></li>
+                    {% endif %}
+                    <li class="selected">{{current_page}}</li>
+                    {% if current_page < total_page - 1 %}
+                    <li><a href="./?area={{area}}&group={{group}}&server={{server}}&page={{current_page+1}}">{{current_page
+                        + 1}}</a></li>
+                    {% endif %}
+                    {% if current_page < total_page - 2 %}
+                    <li><a href="./?area={{area}}&group={{group}}&server={{server}}&page={{current_page+2}}">{{current_page
+                        + 2}}</a></li>
+                    {% endif %}
+                    {% if current_page < total_page %}
+                    <li>
+                        <a href="./?area={{area}}&group={{group}}&server={{server}}&page={{total_page}}">{{total_page}}</a>
+                    </li>
+                    <li><a href="./?area={{area}}&group={{group}}&server={{server}}&page={{current_page+1}}" rel="next">Next</a>
+                    </li>
+                    {% endif %}
                 </ol>
                 <span>跳转到：</span>
 

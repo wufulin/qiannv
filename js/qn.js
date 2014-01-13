@@ -1,44 +1,47 @@
 
 (function () {
 	$(function () {
-		$('#area-select').jqDropDown({
+		$('#area-select, #group-select').jqDropDown({
 			afterToggle: function () {
 				var _this = $(this);
 				_this.parents('.ddContainer').css('zIndex', '100000000');
 				_this.next().width('auto')
 			},
 			optionChanged: function () {
-				$('#query-all').submit();
-				/*var _this = $(this);
-				$.ajax({
-					'url': this.form.action,
-					'data': '',
-					'dataType': 'json',
-					'type': 'GET',
-					'success': function (data) {
-						// 根据所选大区，更新页面
-					}
-				});
-				*/
+				$('#query1').submit();
 			}
 		});
 
-		$('#group-select, #server-select').jqDropDown({
+        $('#server-select').jqDropDown({
 			afterToggle: function () {
 				var _this = $(this);
 				_this.next().width('auto')
 			},
 			optionChanged: function () {
-				$(this.form).submit();
+				$('#query2').submit();
 			}
 		});
 
 		$(".nano").nanoScroller({alwaysVisible: true});
 
+        // 根据字段查询页面 ./search=xxx
+        $('#search-form').submit(function (e) {
+            e.preventDefault();
+            $.get('./', {
+                search: $('#search-input').val()
+            }), function() {
+
+            };
+        });
+
+        // 跳转到指定页面 ./area=xx&group=xx&server=xx&page=xx
 		$('.goto').submit(function (e) {
 			e.preventDefault();
-			$.post('', {
-				page: $('.goto .page').val()
+			$.get('./', {
+				page: $('.goto .page').val(),
+                area: $('#area-select').val(),
+                group: $('#group-select').val(),
+                server: $('#server-select').val()
 			}, function () {
 
 			});
