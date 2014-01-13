@@ -173,6 +173,10 @@ a.figure {
     display: block;
 }
 
+.figure img {
+    border: 0;
+}
+
 a.figure > div.index {
     position: absolute;
     left: 59px;
