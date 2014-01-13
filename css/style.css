@@ -105,9 +105,15 @@ div.query {
     padding: 15px 0px 5px 0px;
 }
 
+div.query-inner {
+    text-align: left;
+    vertical-align: middle;
+}
+
 .query .field {
   display: inline-block;
   width: 50px;
+  margin-top: 3px;
 }
 
 div.right > .nano {
