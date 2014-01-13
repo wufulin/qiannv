@@ -1,146 +1,143 @@
-
 (function () {
-	$(function () {
-		$('#area-select, #group-select').jqDropDown({
-			afterToggle: function () {
-				var _this = $(this);
-				_this.parents('.ddContainer').css('zIndex', '100000000');
-				_this.next().width('auto')
-			},
-			optionChanged: function () {
-				$('#query1').submit();
-			}
-		});
+    $(function () {
+        $('#area-select, #group-select, #server-select').jqDropDown({
+            afterToggle: function () {
+                var _this = $(this);
+                $('.ddContainer').css('zIndex', '0')
+                _this.parents('.ddContainer').css('zIndex', '100000000');
+                _this.next().width('auto')
+            },
+            optionChanged: function () {
+                $('#query').submit();
+            }
+        });
 
-        $('#server-select').jqDropDown({
-			afterToggle: function () {
-				var _this = $(this);
-				_this.next().width('auto')
-			},
-			optionChanged: function () {
-				$('#query2').submit();
-			}
-		});
+        $(".nano").nanoScroller({alwaysVisible: true});
 
-		$(".nano").nanoScroller({alwaysVisible: true});
-
-        // ¸ù¾İ×Ö¶Î²éÑ¯Ò³Ãæ ./search=xxx
+        // æ ¹æ®å­—æ®µæŸ¥è¯¢ ./search=xxx
         $('#search-form').submit(function (e) {
             e.preventDefault();
             $.get('./', {
                 search: $('#search-input').val()
-            }), function() {
+            }), function () {
 
             };
         });
 
-        // Ìø×ªµ½Ö¸¶¨Ò³Ãæ ./area=xx&group=xx&server=xx&page=xx
-		$('.goto').submit(function (e) {
-			e.preventDefault();
-			$.get('./', {
-				page: $('.goto .page').val(),
+        var phSearch = Placeholder('#search-input', 'è¾“å…¥é€‰æ‰‹åç§°æˆ–ç¼–å·');
+        phSearch.css({
+            color: '#243E76',
+            fontSize: '12px',
+            lineHeight: '20px'
+        });
+
+        // æ ¹æ®æŒ‡å®šé¡µé¢æŸ¥è¯¢ ./area=xx&group=xx&server=xx&page=xx
+        $('.goto').submit(function (e) {
+            e.preventDefault();
+            $.get('./', {
+                page: $('.goto .page').val(),
                 area: $('#area-select').val(),
                 group: $('#group-select').val(),
                 server: $('#server-select').val()
-			}, function () {
+            }, function () {
 
-			});
-		});
+            });
+        });
 
-		$('.vote-btn').click(function () {
-			var external = window.external;
-			external.ICC_VOTE(1);
-		});
-	})
+        $('.vote-btn').click(function () {
+            var external = window.external;
+            external.ICC_VOTE(1);
+        });
+    })
 })();
 
 function vote_callback(result) {
-	if (result == 0) {
-		alert('Í¶Æ±Ê§°Ü');
-	} else if (result == 1) {
-		alert('Í¶Æ±³É¹¦');
-	}
+    if (result == 0) {
+        alert('æŠ•ç¥¨å¤±è´¥');
+    } else if (result == 1) {
+        alert('æŠ•ç¥¨æˆåŠŸ');
+    }
 }
 
 function Placeholder(input, text) {
-	if (!(this instanceof Placeholder)) {
-		return new Placeholder(input, text);
-	}
+    if (!(this instanceof Placeholder)) {
+        return new Placeholder(input, text);
+    }
 
-	input = $(input);
+    input = $(input);
 
-	if (!input.length) {
-		return;
-	}
+    if (!input.length) {
+        return;
+    }
 
-	var ph = $('<span class="placeholder">' + text + '</span>');
-	input.after(ph);
-	if (!/^\s*$/.test(input.val())) {
-		ph.hide();
-	}
-	ph.click(function () {
-		input.focus();
-	});
-	// focusÔÙhideµôplaceholder£¬¿É·ÀÖ¹Ä³Ğ©Çé¿öÏÂÃ»ÓĞclick¶øÖ±½ÓfocusÁËinput
-	// ÀıÈç£ºtab¼üfocus
-	input.focus(function () {
-		ph.hide();
-	});
-	input.blur(function () {
-		if (!input.val()) {
-			ph.show();
-		}
-	});
+    var ph = $('<span class="placeholder">' + text + '</span>');
+    input.after(ph);
+    if (!/^\s*$/.test(input.val())) {
+        ph.hide();
+    }
+    ph.click(function () {
+        input.focus();
+    });
+    // focuså†hideæ‰placeholderï¼Œå¯é˜²æ­¢æŸäº›æƒ…å†µä¸‹æ²¡æœ‰clickè€Œç›´æ¥focusäº†input
+    // ä¾‹å¦‚ï¼štabé”®focus
+    input.focus(function () {
+        ph.hide();
+    });
+    input.blur(function () {
+        if (!input.val()) {
+            ph.show();
+        }
+    });
 
-	setStyle();
+    setStyle();
 
-	/**
-	 * ĞŞ¸ÄÌáÊ¾ÎÄ°¸
-	 */
-	this.value = function (value) {
-		if (!value) {
-			return ph.text();
-		}
-		ph.text(value);
-	};
+    /**
+     * ä¿®æ”¹æç¤ºæ–‡æ¡ˆ
+     */
+    this.value = function (value) {
+        if (!value) {
+            return ph.text();
+        }
+        ph.text(value);
+    };
 
-	/**
-	 * ÓÉÓÚÈİÆ÷`display:none`Ê±ÎŞ·¨ÕıÈ·¶¨Î»£¬Òò´ËÌá¹©´Ë·½·¨
-	 * ÔÚ`display != 'none'`Ê±µ÷ÓÃ¿ÉÖØÖÃÎ»ÖÃ
-	 */
-	this.reset = function () {
-		setStyle();
-	};
+    /**
+     * ç”±äºå®¹å™¨`display:none`æ—¶æ— æ³•æ­£ç¡®å®šä½ï¼Œå› æ­¤æä¾›æ­¤æ–¹æ³•
+     * åœ¨`display != 'none'`æ—¶è°ƒç”¨å¯é‡ç½®ä½ç½®
+     */
+    this.reset = function () {
+        setStyle();
+    };
 
-	this.css = function (styles) {
-		ph.css(styles);
-	};
+    this.css = function (styles) {
+        ph.css(styles);
+    };
 
-	function setStyle() {
-		var pos = input.position();
+    function setStyle() {
+        var pos = input.position();
 
-		$.each('paddingTop paddingRight paddingBottom paddingLeft'.split(' '), function (index, item) {
-			ph.css(item, input.css(item));
-		});
+        $.each('paddingTop paddingRight paddingBottom paddingLeft'.split(' '), function (index, item) {
+            ph.css(item, input.css(item));
+        });
 
-		ph.css({
-			position: 'absolute',
-			top: pos.top + getCssNum('borderTopWidth') + getCssNum('marginTop') + 'px',
-			left: pos.left + getCssNum('borderLeftWidth') + getCssNum('marginLeft') + 'px',
-			//width: '100px', //input.width(),
-			//fontSize: input.css('fontSize'),
-			fontSize: '14px',
-			fontFamily: input.css('fontFamily'),
-			height: input.css('height'),
-			lineHeight: input.css('lineHeight'),
-			color: '#AAA',
-			cursor: 'text'
-		});
-	}
+        ph.css({
+            position: 'absolute',
+            top: pos.top + getCssNum('borderTopWidth') + getCssNum('marginTop') + 'px',
+            left: pos.left + getCssNum('borderLeftWidth') + getCssNum('marginLeft') + 'px',
+            //width: '100px', //input.width(),
+            //fontSize: input.css('fontSize'),
+            fontSize: '14px',
+            fontFamily: input.css('fontFamily'),
+            height: input.css('height'),
+            lineHeight: input.css('lineHeight'),
+            color: '#AAA',
+            cursor: 'text'
+        });
+    }
 
-	function getCssNum(attr) {
-		var num = input.css(attr).match(/^\d+/);
-		return num ? +num : 0;
-	}
+    function getCssNum(attr) {
+        var num = input.css(attr).match(/^\d+/);
+        return num ? +num : 0;
+    }
 }
 
