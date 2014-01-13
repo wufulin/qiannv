@@ -26,7 +26,14 @@
 		$(".nano").nanoScroller({alwaysVisible: true});
 
         // 根据字段查询页面 ./search=xxx
-        $('#search-form').submit();
+        $('#search-form').submit(function (e) {
+            e.preventDefault();
+            $.get('./', {
+                search: $('#search-input').val()
+            }), function() {
+
+            };
+        });
 
         // 跳转到指定页面 ./area=xx&group=xx&server=xx&page=xx
 		$('.goto').submit(function (e) {
