@@ -15,6 +15,7 @@
                 $('.area-select, #group-select, #server-select').jqDropDown({
                     afterToggle: function () {
                         var _this = $(this);
+                        $('.ddContainer').css('zIndex', '0')
                         _this.parents('.ddContainer').css('zIndex', '100000000');
                         _this.next().width('auto')
                     }
