@@ -11,6 +11,9 @@ body {
     text-align: center;
 }
 
+.hide {
+    display: none;
+}
 .ib {
     display: inline-block;
     *display: inline;
@@ -137,6 +140,7 @@ form.query-inner {
     position: absolute;
     top: 42px;
     right: 50px;
+    _z-index: -1;
 }
 
 .query .field {
@@ -383,4 +387,11 @@ div.footer input {
 .mask-bg span {
     color: #ffffff;
     line-height: 50px;
+}
+
+.query .fishSelect {
+    _z-index: -1;
+}
+.query .expand {
+    _z-index: 1;
 }

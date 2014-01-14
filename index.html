@@ -3,23 +3,18 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
     <title>倩女其姝幽梦天使竞选（初赛）</title>
-    <link rel="stylesheet" type="text/css" href="js/jqDropDown.css"/>
     <link rel="stylesheet" type="text/css" href="css/style.css"/>
     <link rel="stylesheet" type="text/css" href="css/nanoscroller.css"/>
-    <script language="javascript" type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
+    <script language="javascript" type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
     <script language="javascript" type="text/javascript" src="js/jquery.nanoscroller.min.js"></script>
-    <script language="javascript" type="text/javascript" src="js/jqDropDown.jquery.min.js"></script>
+    <script src="js/fishSelect.js"></script>
     <script language="javascript" type="text/javascript">
         (function () {
             $(function () {
-                $('.area-select, #group-select, #server-select').jqDropDown({
-                    afterToggle: function () {
-                        var _this = $(this);
-                        $('.ddContainer').css('zIndex', '0')
-                        _this.parents('.ddContainer').css('zIndex', '100000000');
-                        _this.next().width('auto')
-                    }
-                });
+                $('.fishSelect')
+                    .removeClass('hide')
+                    .addClass('ib')
+                    .fishSelect();
 
                 $(".nano").nanoScroller({alwaysVisible: true});
 
@@ -227,33 +222,48 @@
         <form class="query-inner" id="query" name="query" action="./" method="GET">
             <span class="field">大&nbsp;&nbsp;&nbsp;区:</span>
 
-            <select class="area-select" name="area">
-                <option value="all">全部</option>
-                <option value="all">全部</option>
-                <option value="all">全部</option>
-                <option value="all">全部</option>
-                <option value="all">全部</option>
-            </select>
+            <div class="fishSelect area-select hide">
+                <span data-value="x"></span>
+                <ul>
+                    <li data-value="1">全部</li>
+                    <li data-value="1">全部</li>
+                    <li data-value="1">全部</li>
+                    <li data-value="1">全部</li>
+                    <li data-value="1">全部</li>
+                    <li data-value="1">全部</li>
+                    <li data-value="1">全部</li>
+                </ul>
+            </div>
 
             <span class="field">帮&nbsp;&nbsp;&nbsp;会:</span>
 
-            <select id="group-select" name="group">
-                <option value="all">全部</option>
-                <option value="all">全部</option>
-                <option value="all">全部</option>
-                <option value="all">全部</option>
-                <option value="all">全部</option>
-            </select>
+            <div class="fishSelect hide" id="group-select">
+                <span data-value="x"></span>
+                <ul>
+                    <li data-value="1">全部</li>
+                    <li data-value="1">全部</li>
+                    <li data-value="1">全部</li>
+                    <li data-value="1">全部</li>
+                    <li data-value="1">全部</li>
+                    <li data-value="1">全部</li>
+                    <li data-value="1">全部</li>
+                </ul>
+            </div>
 
             <span class="field">服务器:</span>
 
-            <select id="server-select" name="server">
-                <option value="all">全部</option>
-                <option value="all">全部</option>
-                <option value="all">全部</option>
-                <option value="all">全部</option>
-                <option value="all">全部</option>
-            </select>
+            <div class="fishSelect hide" id="server-select">
+                <span data-value="x"></span>
+                <ul>
+                    <li data-value="1">全部</li>
+                    <li data-value="1">全部</li>
+                    <li data-value="1">全部</li>
+                    <li data-value="1">全部</li>
+                    <li data-value="1">全部</li>
+                    <li data-value="1">全部</li>
+                    <li data-value="1">全部</li>
+                </ul>
+            </div>
         </form>
 
         <form class="search-form ib">
