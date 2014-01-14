@@ -14,7 +14,7 @@
 
         $(".nano").nanoScroller({alwaysVisible: true});
 
-        // 根据字段查询 ./search=xxx
+        // 根据字段查询 ./clientlist?search=xxx
         $('#search-form').submit(function (e) {
             e.preventDefault();
             $.get('./', {
@@ -31,7 +31,7 @@
             lineHeight: '20px'
         });
 
-        // 根据指定页面查询 ./area=xx&group=xx&server=xx&page=xx
+        // 根据指定页面查询 ./clientlist?area=xx&group=xx&server=xx&page=xx
         $('.goto').submit(function (e) {
             e.preventDefault();
             $.get('./', {
