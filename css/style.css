@@ -32,6 +32,7 @@ div.header {
 
 div.header p {
     padding: 3px 15px;
+    _padding: 1px 15px;
 }
 
 div.header strong {
@@ -132,9 +133,9 @@ form.query-inner {
     vertical-align: middle;
 }
 
-form.search-form {
+.search-form {
     position: absolute;
-    bottom: 10px;
+    top: 42px;
     right: 50px;
 }
 
@@ -144,25 +145,27 @@ form.search-form {
     margin-top: 3px;
 }
 
-div.right > .nano {
+div.right .nano {
     width: 375px;
     height: 305px;
 }
 
-div.right > .nano .content {
+div.right .nano .content {
     height: 305px;
 }
 
-div.right > .nano .pane {
+div.right .nano .pane {
     background: #24367b;
 }
 
-div.right > .nano .slider {
+div.right .nano .slider {
     background: #487bbc;
 }
 
-div.right > .nano .content li {
-    float: left;
+div.right .nano .content li {
+    display: inline-block;
+    *display: inline;
+    *zoom:1;
     width: 105px;
     height: 145px;
     padding-right: 15px;
@@ -184,7 +187,7 @@ span.count i {
     color: #6bbeff;
 }
 
-div.detail > span.name {
+div.detail span.name {
     color: #fff;
     margin-top: 3px;
     margin-left: 2px;
@@ -205,7 +208,7 @@ a.figure {
     height: auto;
 }
 
-a.figure > div.index {
+a.figure div.index {
     position: absolute;
     width: 100px;
     text-align: right;
@@ -269,11 +272,11 @@ ol.pagination a[rel="next"] {
     border: none;
 }
 
-div.footer > span {
+div.footer span {
     margin-left: 10px;
 }
 
-div.footer > input {
+div.footer input {
     width: 80px;
     height: 14px;
 }
@@ -298,16 +301,20 @@ div.footer > input {
 }
 
 .ddContainer .ddToggle span {
-    border-color: #288bdc transparent transparent;
+    border-color: #288bdc transparent transparent transparent;
+    border-bottom-color: transparent;
+    line-height: 0;
 }
 
 .ddOptionList {
     min-width: 104px;
     _width: 104px;
 }
+.ddOptionList li {
+    _width: 104px;
+}
 
 .search-form {
-    position: relative;
     font-size: 0;
     border: 1px solid #122051;
 }
@@ -373,7 +380,7 @@ div.footer > input {
     margin-left: -75px;
 }
 
-.mask-bg > span {
+.mask-bg span {
     color: #ffffff;
     line-height: 50px;
 }
