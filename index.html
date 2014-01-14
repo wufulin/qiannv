@@ -58,14 +58,14 @@
         function vote_callback(result) {
             if (result == 0) {
                 $('.mask>span').text('投票失败');
-                $('.mask').css('background','url(../image/提示2.png) no-repeat')
-                        .show(1000,function(){
+                $('.mask').css('background', 'url(../image/提示2.png) no-repeat')
+                        .show(1000, function () {
                             $('.mask').hide();
                         });
             } else if (result == 1) {
                 $('.mask>span').text('投票成功');
-                $('.mask').css('background','url(../image/提示1.png) no-repeat')
-                        .show(1000,function(){
+                $('.mask').css('background', 'url(../image/提示1.png) no-repeat')
+                        .show(1000, function () {
                             $('.mask').hide();
                         });
             }
@@ -157,10 +157,12 @@
 <body>
 <div class="wrapper">
 <div class="header">
-    <span class="date">投票时间：</span><strong>2014/1/15-2014/2/14</strong>
-    <span class="total-vote">总可投票数：</span><strong>5</strong>
-    <span class="today-vote">今日有效票数：</span><strong>5</strong>
-    <strong class="peroid">(初赛)</strong>
+    <p class="date">投票时间：<strong>2014/1/15-2014/2/14</strong></p>
+    <p>
+        <span class="total-vote">总可投票数：</span><strong>5</strong>
+        <span class="today-vote">今日有效票数：</span><strong>5</strong>
+        <strong class="peroid">(初赛)</strong>
+    </p>
 </div>
 <div class="main">
 <!-- content goes here -->
@@ -245,8 +247,8 @@
         </form>
 
         <form class="search-form ib">
-                <input id="search-input" type="text" class="search"/>
-                <input class="submit ib" type="submit" value=""/>
+            <input id="search-input" type="text" class="search"/>
+            <input class="submit ib" type="submit" value=""/>
         </form>
     </div>
     <div class="nano">

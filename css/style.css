@@ -19,7 +19,7 @@ body {
 
 .wrapper {
     width: 620px;
-    height: 440px;
+    height: 460px;
     margin: 0% auto;
     background-image: url(../image/bg.png);
     text-align: left;
@@ -27,18 +27,22 @@ body {
 
 /* header */
 div.header {
-    height: 25px;
+    height: 45px;
+}
+
+div.header p {
+    padding: 3px 15px;
 }
 
 div.header strong {
     color: #ffffff;
+    margin-right: 90px;
 }
 
 div.header span {
     display: inline-block;
     width: 100px;
-    text-align: right;
-    margin-left: 15px;
+    text-align: left;
 }
 
 div.header strong.peroid {
