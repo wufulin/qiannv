@@ -210,11 +210,11 @@ a.figure > div.index {
     top: 62px;
     color: #ffffff;
     z-index: 100;
-    background-color: #000000;
+    /* 半透明效果 */
     /* other browser */
-    opacity: 0.4;
+    background:rgba(0,0,0,0.5);
     /* works in IE6, IE7, and IE8 */
-    filter: progid:DXImageTransform.Microsoft.Alpha(opacity=40);
+    filter: progid:DXImageTransform.Microsoft.gradient(startcolorstr=#55000000,endcolorstr=#7F000000);
 }
 
 a.vote-btn {
