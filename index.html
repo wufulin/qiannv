@@ -30,7 +30,8 @@
                 {% for user in top_voter_list %}
                 <li class="{{ loop.cycle('odd', 'even')}}">
                     <img src="{{ user.avatar }}">
-                    <span>{{ user.nick|e|truncate(8) }} {{ user.vote_count|e }}票</span>
+                    <span class="rank-name">{{ user.nick|e|truncate(8) }}</span>
+                    <span class="rank-count">{{ user.vote_count|e }}票</span>
                 </li>
                 {% endfor %}
             </ul>
