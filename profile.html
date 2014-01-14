@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title></title>
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
-    <link type="text/css" rel="stylesheet" href="css/profile.css">
-    <script type="text/javascript" language="javascript" src="js/jquery-1.10.2.min.js"></script>
+    <title></title>
+    <link type="text/css" rel="stylesheet" href="{{ url_prefix }}css/profile.css">
+    <script type="text/javascript" language="javascript" src="{{ url_prefix }}js/jquery-1.10.2.min.js"></script>
 </head>
 <body>
 <div class="wrapper">
@@ -13,7 +13,7 @@
         <span>2014/1/15-2014/2/14</span>
     </div>
     <div class="content">
-        <a class="back" href="index.html">返回</a>
+        <a class="back" href="../clientlist">返回</a>
         <div class="main">
             <div class="left">
                 <div class="avatar">
@@ -22,7 +22,7 @@
             </div>
             <div class="right">
                 <ul>
-                    <li><img class="small_avatar" src="image/small.png"></li>
+                    <li><img class="small_avatar" src="{{ url_prefix }}image/small.png"></li>
                     <li class="username">寒烟</li>
                     <li class="number">#2310</li>
                     <li><span>级&nbsp;&nbsp;&nbsp;&nbsp;别：</span><span>75</span>级</li>

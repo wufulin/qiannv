@@ -41,7 +41,8 @@
 
                     <select id="area-select" name="area">
                         {% for a in area_list %}
-                        <option value="{{a.id}}" {% if a.id == area %} selected{%endif%}>{{a.name}}</option>
+                        <option value="{{a.id}}"
+                        {% if a.id == area %} selected{%endif%}>{{a.name}}</option>
                         {% endfor %}
                     </select>
 
@@ -49,7 +50,8 @@
 
                     <select id="group-select" name="group">
                         {% for g in group_list %}
-                        <option value="{{g.id}}" {% if g.id == group %}selected{%endif%}>{{g.name}}</option>
+                        <option value="{{g.id}}"
+                        {% if g.id == group %}selected{%endif%}>{{g.name}}</option>
                         {% endfor %}
                     </select>
 
@@ -57,7 +59,8 @@
 
                     <select id="server-select" name="server">
                         {% for s in server_list %}
-                        <option value="{{s.id}}" {% if s.id == server %}selected{%endif%}>{{s.name}}</option>
+                        <option value="{{s.id}}"
+                        {% if s.id == server %}selected{%endif%}>{{s.name}}</option>
                         {% endfor %}
                     </select>
                 </form>
@@ -68,13 +71,18 @@
                 </form>
             </div>
             <div class="nano">
+                <div class="mask">
+                    <div class="mask-bg">
+                        <span></span>
+                    </div>
+                </div>
                 <div class="content">
                     {% for competitor in competitor_list %}
                     <li>
                         <div class="detail">
                             <span class="name">{{ competitor.name|e }}</span>
 
-                            <a class="figure" href="profile.html">
+                            <a class="figure" href="./clientplayer/?id=11">
                                 <img src="{{ competitor.avatar }}" alt="">
 
                                 <div class="index">{{ competitor.id }}</div>

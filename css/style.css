@@ -323,3 +323,28 @@ div.footer > input {
     background: url(../image/sprite.png) #18275e -179px -43px;
     cursor: pointer;
 }
+
+.mask {
+    height: 305px;
+    width: 390px;
+    text-align: center;
+    z-index: 999;
+    position: relative;
+    display: none;
+}
+
+.mask-bg {
+    background: url(../image/提示1.png) no-repeat;
+    width: 150px;
+    height: 50px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -25px;
+    margin-left: -75px;
+}
+
+.mask-bg > span {
+    color: #ffffff;
+    line-height: 50px;
+}

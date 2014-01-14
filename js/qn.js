@@ -53,9 +53,17 @@
 
 function vote_callback(result) {
     if (result == 0) {
-        alert('投票失败');
+        $('.mask>span').text('投票失败');
+        $('.mask').css('background', 'url(../image/提示2.png) no-repeat')
+            .show(1000, function () {
+                $('.mask').hide();
+            });
     } else if (result == 1) {
-        alert('投票成功');
+        $('.mask>span').text('投票成功');
+        $('.mask').css('background', 'url(../image/提示1.png) no-repeat')
+            .show(1000, function () {
+                $('.mask').hide();
+            });
     }
 }
 
