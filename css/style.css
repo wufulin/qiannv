@@ -208,8 +208,13 @@ a.figure > div.index {
     left: 0px;
     top: 62px;
     color: #ffffff;
-    background-color: rgba(0, 0, 0, 0.4);
     z-index: 100;
+    /* 半透明效果 */
+    /* other browser */
+    background:rgba(0,0,0,0.5);
+    /* works in IE6, IE7, and IE8 */
+    filter: progid:DXImageTransform.Microsoft.gradient(startcolorstr=#55000000,endcolorstr=#7F000000);
+;
 }
 
 a.vote-btn {
