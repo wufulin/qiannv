@@ -13,7 +13,7 @@ body {
 
 .wrapper {
     width: 620px;
-    height: 440px;
+    height: 460px;
     margin: 0% auto;
     background-image: url(../image/bg.png);
     text-align: left;
@@ -23,6 +23,7 @@ body {
 div.header {
     padding: 5px 10px 10px 10px;
     text-align: center;
+    height: 30px;
     color: #ffffff;
 }
 
