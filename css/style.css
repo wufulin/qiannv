@@ -77,18 +77,26 @@ div.left ul {
     margin-top: -5px;
 }
 
-div.left span {
-    position: relative;
-    display: inline-block;
-    left: 5px;
-    top: -5px;
+span.rank-name {
+     position: relative;
+    left: 10px;
     font-size: 13px;
+    line-height: 22px;
+    float: left;
+}
+span.rank-count {
+     position: relative;
+    font-size: 13px;
+    line-height: 22px;
+    float: right;
+    right: -5px;
 }
 
 div.left li {
     padding: 6px 10px 6px 10px;
     background-color: #24367b;
     height: 22px;
+    overflow: hidden;
 }
 
 div.left li img {
@@ -97,6 +105,7 @@ div.left li img {
     max-width: 22px;
     width: expression(this.width>22?"22px":this.width);
     height: auto;
+    float: left;
 }
 
 div.left li.odd {
