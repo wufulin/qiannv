@@ -87,7 +87,11 @@ div.left li {
 div.left li img {
     position: relative;
     left: 5px;
+    max-width:22px;
+    width:expression(this.width>22?"22px":this.width);
+    height:auto;
 }
+
 div.left li.odd {
     background-color: #1e2e6c;
 }
