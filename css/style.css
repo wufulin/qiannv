@@ -176,7 +176,7 @@ div.detail {
 
 div.count-div {
     text-align: center;
-    padding: 3px 0px;
+    margin: 4px 0px;
 }
 
 span.count,
@@ -195,10 +195,14 @@ a.figure {
     position: relative;
     display: block;
     text-decoration: none;
+    text-align: center;
 }
 
 .figure img {
     border: 0;
+    max-width: 100px;
+    width: expression(this.width>100?"100px":this.width);
+    height: auto;
 }
 
 a.figure > div.index {
@@ -206,14 +210,14 @@ a.figure > div.index {
     width: 100px;
     text-align: right;
     left: 0px;
-    top: 62px;
+    top: 60px;
     color: #ffffff;
     z-index: 100;
     /* 半透明效果 */
     /* other browser */
     background:rgba(0,0,0,0.5);
     /* works in IE6, IE7, and IE8 */
-    filter: progid:DXImageTransform.Microsoft.gradient(startcolorstr=#55000000,endcolorstr=#7F000000);
+    filter: progid:DXImageTransform.Microsoft.gradient(startcolorstr=#33000000,endcolorstr=#7F000000);
 ;
 }
 
