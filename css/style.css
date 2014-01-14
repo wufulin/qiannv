@@ -178,6 +178,7 @@ div.detail > span.name {
 a.figure {
     position: relative;
     display: block;
+    text-decoration: none;
 }
 
 .figure img {
@@ -186,9 +187,12 @@ a.figure {
 
 a.figure > div.index {
     position: absolute;
-    left: 59px;
+    width: 100px;
+    text-align: right;
+    left: 0px;
     top: 62px;
     color: #ffffff;
+    z-index: 100;
 }
 
 a.vote-btn {
